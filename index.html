@@ -579,10 +579,23 @@
             </button>
 
             <p class="form-note">
-              This opens your email app with the message ready to send. 
-              Nothing is stored on any server — it goes straight to the developer.
+              Tries to open your email app. If nothing opens, use the fallback below — nothing is stored on any server.
             </p>
           </form>
+
+          <div id="feedbackFallback" class="feedback-fallback" hidden>
+            <p class="feedback-fallback-title">Email app didn’t open?</p>
+            <p>Send your message manually to:</p>
+            <p><a href="mailto:cleverstar02@gmail.com" id="fallbackEmailLink"><strong>cleverstar02@gmail.com</strong></a></p>
+            <button type="button" class="btn btn-secondary" id="copyEmailBtn" style="width: 100%; margin-top: 0.75rem;">
+              Copy email address
+            </button>
+            <pre id="fallbackPreview" class="feedback-preview"></pre>
+            <button type="button" class="btn btn-secondary" id="copyMessageBtn" style="width: 100%; margin-top: 0.5rem;">
+              Copy full message
+            </button>
+            <p id="copyStatus" class="form-note" style="margin-top: 0.6rem;"></p>
+          </div>
         </div>
       </div>
     </div>
@@ -740,21 +753,92 @@
       revealEls.forEach((el) => el.classList.add('visible'));
     }
 
-    // Feedback form → opens email app with filled message
+    // Feedback form → mailto + visible fallback (many browsers block mailto)
     const feedbackForm = document.getElementById('feedbackForm');
+    const feedbackFallback = document.getElementById('feedbackFallback');
+    const fallbackPreview = document.getElementById('fallbackPreview');
+    const copyStatus = document.getElementById('copyStatus');
+
+    function buildFeedbackText(name, type, message) {
+      let text = '';
+      if (name) text += 'Name: ' + name + '\n';
+      text += 'Type: ' + type + '\n\n';
+      text += message;
+      return text;
+    }
+
+    function openMailto(subject, body) {
+      const url = 'mailto:cleverstar02@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      const a = document.createElement('a');
+      a.href = url;
+      a.style.display = 'none';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      // Also try location as secondary attempt
+      setTimeout(function () {
+        try { window.location.href = url; } catch (err) {}
+      }, 150);
+      return url;
+    }
+
+    function copyText(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text);
+      }
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      return Promise.resolve();
+    }
+
     if (feedbackForm) {
       feedbackForm.addEventListener('submit', function (e) {
         e.preventDefault();
         const name = document.getElementById('fb-name').value.trim();
         const type = document.getElementById('fb-type').value;
         const message = document.getElementById('fb-message').value.trim();
-        if (!message) return;
-        const subject = encodeURIComponent('KeepMemo — ' + type);
-        let body = '';
-        if (name) body += 'Name: ' + name + '\n';
-        body += 'Type: ' + type + '\n\n';
-        body += message;
-        window.location.href = 'mailto:cleverstar02@gmail.com?subject=' + subject + '&body=' + encodeURIComponent(body);
+        if (!message) {
+          document.getElementById('fb-message').focus();
+          return;
+        }
+
+        const subject = 'KeepMemo — ' + type;
+        const body = buildFeedbackText(name, type, message);
+        openMailto(subject, body);
+
+        // Always show fallback so user is not stuck if mailto does nothing
+        if (feedbackFallback && fallbackPreview) {
+          fallbackPreview.textContent = 'To: cleverstar02@gmail.com\nSubject: ' + subject + '\n\n' + body;
+          feedbackFallback.hidden = false;
+          if (copyStatus) copyStatus.textContent = 'If your email app did not open, copy the message below and send it manually.';
+          feedbackFallback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      });
+    }
+
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    if (copyEmailBtn) {
+      copyEmailBtn.addEventListener('click', function () {
+        copyText('cleverstar02@gmail.com').then(function () {
+          if (copyStatus) copyStatus.textContent = 'Email address copied.';
+        });
+      });
+    }
+
+    const copyMessageBtn = document.getElementById('copyMessageBtn');
+    if (copyMessageBtn) {
+      copyMessageBtn.addEventListener('click', function () {
+        const text = fallbackPreview ? fallbackPreview.textContent : '';
+        copyText(text).then(function () {
+          if (copyStatus) copyStatus.textContent = 'Full message copied. Paste it into your email app.';
+        });
       });
     }
   </script>
