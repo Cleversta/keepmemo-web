@@ -1110,6 +1110,43 @@ p {
 }
 
 
+.feedback-fallback {
+  margin-top: 1.25rem;
+  padding: 1.15rem 1.2rem;
+  background: var(--paper-primary);
+  border: 1.5px dashed var(--sepia);
+  border-radius: var(--radius-sm);
+}
+
+.feedback-fallback-title {
+  font-weight: 600;
+  color: var(--ink-primary);
+  margin-bottom: 0.4rem;
+}
+
+.feedback-fallback p {
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+}
+
+.feedback-preview {
+  margin-top: 0.9rem;
+  padding: 0.85rem 1rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: ui-monospace, monospace;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--ink-secondary);
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 180px;
+  overflow: auto;
+}
+
+
+
 /* ---------- FAQ ---------- */
 .faq-section {
   background: var(--paper-primary);
