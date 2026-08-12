@@ -1,546 +1,642 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>KeepMemo — Free Private Journal &amp; Memory Keeper (No Ads)</title>
-<meta name="description" content="KeepMemo is completely free and ad-free. Private offline journal for birthdays, gifts, memories, and plans. No account, no subscriptions, no tracking. Support the indie developer if you can."/>
-<meta name="keywords" content="KeepMemo, free private journal, ad free journal app, offline diary, birthday reminder, gift tracker, on this day, memory card maker, no ads notebook, free Android journal, relationship memory keeper, support indie developer"/>
-<meta name="author" content="Marason Tleitu"/>
-<meta name="robots" content="index, follow, max-image-preview:large"/>
-<meta name="theme-color" content="#3E5C3C"/>
-<link rel="canonical" href="https://cleversta.github.io/keepmemo-web/"/>
+  <title>KeepMemo — Free Private Journal & Memory Keeper (No Ads)</title>
+  <meta name="description" content="KeepMemo is a private, offline-first memory keeper for the people you love. Birthdays, gifts, journal, plans, and on-device Insights — completely free, no ads, no account." />
+  <meta name="keywords" content="KeepMemo, free private journal, ad free journal app, offline diary, birthday reminder, gift tracker, on this day, memory card maker, no ads notebook, free Android journal, relationship memory keeper, support indie developer" />
+  <meta name="author" content="Marason Tleitu" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#B07A5B" />
+  <link rel="canonical" href="https://cleversta.github.io/keepmemo-web/" />
 
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="KeepMemo — Private Journal &amp; Relationship Memory Keeper"/>
-<meta property="og:description" content="Completely free and ad-free. Private offline journal for birthdays, gifts, memories, and plans. No account, no subscriptions. Free on Google Play."/>
-<meta property="og:url" content="https://cleversta.github.io/keepmemo-web/"/>
-<meta property="og:site_name" content="KeepMemo"/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:image" content="https://cleversta.github.io/keepmemo-web/assets/app-icon.png"/>
-<meta property="og:image:alt" content="KeepMemo app icon"/>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="KeepMemo — Private Journal & Relationship Memory Keeper" />
+  <meta property="og:description" content="Private, offline-first memory keeper. Birthdays, gifts, journal, plans, and on-device Insights. Completely free, ad-free, no account." />
+  <meta property="og:url" content="https://cleversta.github.io/keepmemo-web/" />
+  <meta property="og:site_name" content="KeepMemo" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://cleversta.github.io/keepmemo-web/assets/app-icon.png" />
+  <meta property="og:image:alt" content="KeepMemo app icon" />
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="KeepMemo — Private Journal &amp; Memory Keeper App"/>
-<meta name="twitter:description" content="Completely free, no ads. Private offline journal, birthday reminders, gift tracker, memory cards. Free on Google Play."/>
-<meta name="twitter:image" content="https://cleversta.github.io/keepmemo-web/assets/app-icon.png"/>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="KeepMemo — Private Journal & Memory Keeper App" />
+  <meta name="twitter:description" content="Completely free, no ads. Private journal, gift tracker, on-device Insights. Free on Google Play." />
+  <meta name="twitter:image" content="https://cleversta.github.io/keepmemo-web/assets/app-icon.png" />
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "KeepMemo",
-  "operatingSystem": "Android",
-  "applicationCategory": "LifestyleApplication",
-  "description": "Completely free and ad-free private offline journal and relationship memory keeper. Birthdays, gifts, memories, plans, and memory cards. No account, no subscriptions, no ads.",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "author": { "@type": "Person", "name": "Marason Tleitu", "email": "cleverstar02@gmail.com", "url": "https://cleversta.github.io/about_me/" },
-  "url": "https://cleversta.github.io/keepmemo-web/",
-  "image": "https://cleversta.github.io/keepmemo-web/assets/app-icon.png"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "Is KeepMemo free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. KeepMemo is completely free. No paid tier, no subscriptions, and no in-app purchases required. No account is required." } },
-    { "@type": "Question", "name": "Does KeepMemo have ads?", "acceptedAnswer": { "@type": "Answer", "text": "No. KeepMemo is ad-free. There are no banners, video ads, or watch-to-unlock features." } },
-    { "@type": "Question", "name": "Does KeepMemo work offline?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. KeepMemo is offline-first. Your private journal, memories, birthdays, gifts, and plans all work without internet. Optional backup is under your control." } },
-    { "@type": "Question", "name": "Is my data private in KeepMemo?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. All data stays on your device by default. There is no account, no analytics tracking of your content, and no cloud AI reading your journal. You can lock the app with a PIN or biometrics." } },
-    { "@type": "Question", "name": "Can KeepMemo remind me of birthdays and anniversaries?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. KeepMemo includes birthday and important date reminders. You can set yearly, monthly, weekly, or daily reminders and get notified the day before and on the day." } },
-    { "@type": "Question", "name": "What is On This Day in KeepMemo?", "acceptedAnswer": { "@type": "Answer", "text": "On This Day quietly resurfaces a memory from the same date in a previous year — like finding an old letter. It helps you rediscover private moments you saved in your memory journal." } }
-  ]
-}
-</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "KeepMemo",
+    "operatingSystem": "Android",
+    "applicationCategory": "LifestyleApplication",
+    "description": "Private, offline-first relationship memory keeper. Birthdays, gifts, journal, plans, on-device Insights, and memory cards. No account, no subscriptions, no ads.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "Marason Tleitu", "email": "cleverstar02@gmail.com", "url": "https://cleversta.github.io/about_me/" },
+    "url": "https://cleversta.github.io/keepmemo-web/",
+    "image": "https://cleversta.github.io/keepmemo-web/assets/app-icon.png"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Is KeepMemo free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. KeepMemo is completely free. No paid tier, no subscriptions, and no in-app purchases required. No account is required." } },
+      { "@type": "Question", "name": "Does KeepMemo have ads?", "acceptedAnswer": { "@type": "Answer", "text": "No. KeepMemo is ad-free. There are no banners, video ads, or watch-to-unlock features." } },
+      { "@type": "Question", "name": "Does KeepMemo work offline?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. KeepMemo is offline-first. Your journal, memories, birthdays, gifts, and plans all work without internet. Backup and Google Drive sync are optional and off by default." } },
+      { "@type": "Question", "name": "Is my data private in KeepMemo?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. All data stays on your device by default in a local database. There is no account, no analytics tracking of your content, and no cloud AI reading your journal — even the Insights feature answers questions using only your local data, on-device." } },
+      { "@type": "Question", "name": "What is Insights?", "acceptedAnswer": { "@type": "Answer", "text": "Insights is a tap-first way to ask questions about what you've already saved — upcoming dates, people, memories, gifts, and plans. It runs entirely on your device using your local data, with no cloud AI and no language model download." } },
+      { "@type": "Question", "name": "Can KeepMemo remind me of birthdays and anniversaries?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can set yearly, monthly, weekly, or daily reminders for any date, and get notified the day before and on the day." } },
+      { "@type": "Question", "name": "What is On This Day in KeepMemo?", "acceptedAnswer": { "@type": "Answer", "text": "On This Day quietly resurfaces a memory from the same date in a previous year — like finding an old letter. It helps you rediscover private moments you saved in your memory journal." } }
+    ]
+  }
+  </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="styles.css"/>
-<link rel="icon" type="image/png" href="assets/app-icon.png"/>
-<link rel="apple-touch-icon" href="assets/app-icon.png"/>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="assets/app-icon.png" />
 </head>
 <body>
 
-<nav id="siteNav">
-  <a href="#" class="nav-logo">
-    <img src="assets/app-icon.png" alt="KeepMemo" class="nav-logo-img"/>
-    keepmemo
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#features">Features</a></li>
-    <li><a href="#screenshots">Screenshots</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#support">Support</a></li>
-    <li><a href="https://cleversta.github.io/privacy-policy/" target="_blank" rel="noreferrer noopener">Privacy</a></li>
-    <li><a href="#download" class="nav-cta">Get free</a></li>
-  </ul>
-  <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-</nav>
-
-<section id="hero">
-  <p class="status-line">// journal.status: free, offline, no ads<span class="status-cursor" aria-hidden="true"></span></p>
-  <h1 class="hero-h1">A private journal for the people you <em>love</em>.</h1>
-  <div class="hero-desc">
-    <p>KeepMemo is a completely free, ad-free, offline-first memory keeper — birthdays, gifts, shared moments, and the feelings that make people matter. No account, no subscriptions, nothing hidden.</p>
-  </div>
-  <div class="hero-actions">
-    <a href="#download" class="btn btn-primary">Get it free on Google Play</a>
-    <a href="#support" class="btn btn-ghost">Support the developer</a>
-  </div>
-  <div class="hero-trust">
-    <span>✓ Completely free</span>
-    <span>✓ No ads, ever</span>
-    <span>✓ No account needed</span>
-  </div>
-</section>
-
-<main>
-
-  <section id="features" style="border-left:none;border-right:none;padding-left:0;padding-right:0;max-width:none">
-    <div class="section-head">
-      <p class="eyebrow">Features</p>
-      <h2 class="section-title">One app for memories, birthdays, gifts &amp; plans</h2>
-      <p class="section-sub">Not another contacts app. KeepMemo is a private notebook and relationship journal — for stories, important dates, gift history, and the feelings that make people matter.</p>
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo">
+          <span class="logo-mark"><img src="assets/app-icon.png" alt="KeepMemo app icon" width="36" height="36" /></span>
+          KeepMemo
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#insights">Insights</a></li>
+          <li><a href="#screenshots">Screenshots</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="https://cleversta.github.io/privacy-policy/" target="_blank" rel="noopener">Privacy</a></li>
+          <li><a href="#download" class="nav-cta">Get free</a></li>
+        </ul>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </nav>
     </div>
+  </header>
 
-    <div class="ln">
-      <div class="ln-content">
-        <div class="feature-grid">
-          <div class="feature-card">
-            <div class="feature-icon">👥</div>
-            <h3>People &amp; relationships</h3>
-            <p>Private profiles for everyone you care about — birthdays, anniversaries, favourites, notes, and how you stay connected.</p>
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <span class="eyebrow">100% free · No ads · Offline-first</span>
+          <h1>Preserve the people you love</h1>
+          <p class="lead">
+            KeepMemo is a private, offline-first memory keeper. Birthdays, stories, shared
+            moments, gifts, and the plans you still want to have — remembered exactly right,
+            with no account, no subscriptions, nothing hidden.
+          </p>
+          <div class="hero-actions">
+            <a href="#download" class="btn btn-primary">Download free on Google Play</a>
+            <a href="#support" class="btn btn-secondary">Support the developer</a>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">📸</div>
-            <h3>Photo, voice &amp; video memories</h3>
-            <p>Save moments as photo, video, voice note, or written text. Tag people, star favourites, search anytime.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">📔</div>
-            <h3>Private journal &amp; notebook</h3>
-            <p>A calm offline diary for your thoughts. Attach photos or voice. Link entries to people. No account needed.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🎁</div>
-            <h3>Gift tracker</h3>
-            <p>Never repeat a gift. Log what you gave and received, by person and occasion.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">📅</div>
-            <h3>Plans &amp; intentional moments</h3>
-            <p>Plan moments you want to have — not tasks. Set a date, or keep it as "Someday."</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🌅</div>
-            <h3>On This Day memories</h3>
-            <p>Every morning, a memory from a past year quietly resurfaces — like finding an old letter.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">✨</div>
-            <h3>Memory card maker</h3>
-            <p>Turn any photo into a beautiful memory card. Sixteen gentle styles to share or save.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🔔</div>
-            <h3>Birthday &amp; date reminders</h3>
-            <p>Notified the day before and on the day. Yearly, monthly, weekly, or daily — never late again.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🔒</div>
-            <h3>Private app lock</h3>
-            <p>Protect your journal with a PIN and optional biometrics. Yours, even if someone picks up your phone.</p>
+          <div class="hero-trust">
+            <span>✓ Completely free</span>
+            <span>✓ No ads ever</span>
+            <span>✓ No account needed</span>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="screenshots" style="border-left:none;border-right:none;padding-left:0;padding-right:0;max-width:none">
-    <div class="section-head">
-      <p class="eyebrow">See it in action</p>
-      <h2 class="section-title">A closer look at KeepMemo</h2>
-      <p class="section-sub">Real screens from the app — people, memories, journal, and On This Day.</p>
-    </div>
-    <div class="ln">
-      <div class="ln-content">
-        <div class="shot-gallery">
-          <div class="shot-slot"><img src="assets/keepmemo1.jpg" alt="KeepMemo screenshot 1" loading="lazy" data-gallery="km" data-index="0"></div>
-          <div class="shot-slot"><img src="assets/keepmemo2.jpg" alt="KeepMemo screenshot 2" loading="lazy" data-gallery="km" data-index="1"></div>
-          <div class="shot-slot"><img src="assets/keepmemo3.jpg" alt="KeepMemo screenshot 3" loading="lazy" data-gallery="km" data-index="2"></div>
-          <div class="shot-slot"><img src="assets/keepmemo4.jpg" alt="KeepMemo screenshot 4" loading="lazy" data-gallery="km" data-index="3"></div>
-          <div class="shot-slot"><img src="assets/keepmemo5.jpg" alt="KeepMemo screenshot 5" loading="lazy" data-gallery="km" data-index="4"></div>
-          <div class="shot-slot"><img src="assets/keepmemo6.jpg" alt="KeepMemo screenshot 6" loading="lazy" data-gallery="km" data-index="5"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="use-cases" style="border-left:none;border-right:none;padding-left:0;padding-right:0;max-width:none">
-    <div class="section-head">
-      <p class="eyebrow">Search for what you need</p>
-      <h2 class="section-title">Private journal, birthday reminder, gift tracker &amp; more</h2>
-      <p class="section-sub">People find KeepMemo when they look for a private journal app, offline diary, anniversary reminder, emotional notebook, or a simple way to keep friends and family close.</p>
-    </div>
-    <div class="ln">
-      <div class="ln-content">
-        <div class="usecase-grid">
-          <div class="usecase"><span class="usecase-icon">💝</span><div><h4>Relationship journal &amp; private notes</h4><p>Write about the people you love. Entries can link to their profile so nothing gets lost.</p></div></div>
-          <div class="usecase"><span class="usecase-icon">🎂</span><div><h4>Birthday &amp; anniversary reminders</h4><p>Never miss another important date — notified the day before and on the day.</p></div></div>
-          <div class="usecase"><span class="usecase-icon">📓</span><div><h4>Private notebook &amp; offline diary</h4><p>A calm notebook for your thoughts. Fully offline. No account. No one else can see it.</p></div></div>
-          <div class="usecase"><span class="usecase-icon">🎁</span><div><h4>Gift tracker app</h4><p>Remember every gift given and received. A simple history for thoughtful people.</p></div></div>
-          <div class="usecase"><span class="usecase-icon">🖼️</span><div><h4>Beautiful memory cards</h4><p>Turn a photo into a memory card in seconds. Sixteen soft styles to share or save.</p></div></div>
-          <div class="usecase"><span class="usecase-icon">🤝</span><div><h4>Keep friends &amp; family close</h4><p>Set check-in reminders so people you care about don't drift away.</p></div></div>
-          <div class="usecase"><span class="usecase-icon">🌿</span><div><h4>Emotional diary &amp; memory keeper</h4><p>Capture feelings, not only facts — voice notes, reflections, small moments.</p></div></div>
-          <div class="usecase"><span class="usecase-icon">📴</span><div><h4>Offline journal for Android</h4><p>Works without internet. Your journal lives on your phone. Backup only if you choose.</p></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="how-it-works" style="border-left:none;border-right:none;padding-left:0;padding-right:0;max-width:none">
-    <div class="section-head">
-      <p class="eyebrow">Simple by design</p>
-      <h2 class="section-title">How KeepMemo works</h2>
-      <p class="section-sub">No complicated setup. Just start with the people who matter.</p>
-    </div>
-    <div class="ln">
-      <div class="ln-content">
-        <div class="steps-row">
-          <div class="step"><div class="step-num">01</div><h3>Add someone</h3><p>Create a profile with their photo, birthday, and the little things that make them them.</p></div>
-          <div class="step"><div class="step-num">02</div><h3>Capture moments</h3><p>Save photos, voice notes, videos, or written memories. Link them to the person.</p></div>
-          <div class="step"><div class="step-num">03</div><h3>Plan &amp; remember</h3><p>Set reminders for birthdays and plans. Log gifts. Write in your journal.</p></div>
-          <div class="step"><div class="step-num">04</div><h3>Rediscover</h3><p>Every morning, On This Day brings back a memory. Quiet, warm, always private.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="privacy" class="dark-section" style="border-left:none;border-right:none;padding-left:0;padding-right:0;max-width:none">
-    <div class="section-head">
-      <p class="eyebrow">Your data never leaves you</p>
-      <h2 class="section-title">Privacy is not a feature. <em>It's the foundation.</em></h2>
-      <p class="section-sub">KeepMemo was built offline-first on purpose. Your memories stay on your device unless you decide otherwise.</p>
-    </div>
-    <div class="ln">
-      <div class="ln-content">
-        <div class="privacy-grid">
-          <div class="privacy-item"><h3>Completely free &amp; ad-free</h3><p>No ads, no subscriptions, no paywalls — the opposite of apps that monetize your attention.</p></div>
-          <div class="privacy-item"><h3>No account needed</h3><p>Open the app and start. No email, no sign-up, no tracking profile created behind the scenes.</p></div>
-          <div class="privacy-item"><h3>Everything stays local</h3><p>Data lives on your phone. Optional backup or Drive sync only when you choose.</p></div>
-        </div>
-        <p style="margin-top:28px"><a href="https://cleversta.github.io/privacy-policy/" target="_blank" rel="noreferrer noopener" class="store-link" style="color:var(--paper)">Read the full Privacy Policy →</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section id="future" style="border-left:none;border-right:none;padding-left:0;padding-right:0;max-width:none">
-    <div class="section-head">
-      <p class="eyebrow">What's next</p>
-      <h2 class="section-title">Future of KeepMemo</h2>
-      <p class="section-sub">KeepMemo will keep growing quietly. Your feedback helps decide what comes first.</p>
-    </div>
-    <div class="ln">
-      <div class="ln-content">
-        <div class="roadmap-grid">
-          <div class="roadmap-card"><span class="tag tag-soon">Coming soon</span><h3>iOS version</h3><p>Bring the same private, offline experience to iPhone and iPad.</p></div>
-          <div class="roadmap-card"><span class="tag tag-soon">Coming soon</span><h3>More card styles</h3><p>Additional gentle designs so every memory can feel unique.</p></div>
-          <div class="roadmap-card"><span class="tag tag-community">Exploring</span><h3>Better widgets</h3><p>Richer home-screen widgets for On This Day and upcoming dates.</p></div>
-          <div class="roadmap-card"><span class="tag tag-community">Exploring</span><h3>Export as PDF book</h3><p>Turn a person's memories into a printable keepsake book.</p></div>
-          <div class="roadmap-card"><span class="tag tag-free">Idea</span><h3>Shared moments</h3><p>A carefully designed way to share selected memories — still private by default.</p></div>
-          <div class="roadmap-card"><span class="tag tag-free">Idea</span><h3>Your suggestions</h3><p>Have an idea? Send it below — real user ideas shape the roadmap.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="support" style="border-left:none;border-right:none;padding-left:0;padding-right:0;max-width:none">
-    <div class="section-head"><p class="eyebrow">Built solo · Shipped free</p></div>
-    <div class="ln">
-      <div class="ln-content">
-        <div class="support-layout">
-          <div class="support-intro">
-            <h2 class="section-title" style="margin-bottom:16px">Support the developer</h2>
-            <p>KeepMemo is made by <strong>Marason Tleitu</strong> — a self-taught developer based in Malaysia. The app is completely free, with no ads and no subscriptions, on purpose.</p>
-            <p>I got tired of opening apps full of ads, or "free" products that quietly monetize users. So I build the opposite: useful tools for everyday life, free for everyone, nothing hidden.</p>
-            <p>I currently work at a restaurant to get by while I build these apps. If KeepMemo made your day a little easier, a small tip helps me keep everything free for everyone.</p>
-            <p><a href="https://cleversta.github.io/about_me/" target="_blank" rel="noreferrer noopener" class="store-link">More about me →</a></p>
-          </div>
-          <div class="support-cards">
-            <a class="support-card" href="https://ko-fi.com/marasontleitu" target="_blank" rel="noreferrer noopener">
-              <span class="support-card-icon">☕</span>
-              <h3>Buy me a coffee</h3>
-              <p>Support on Ko-fi — any amount helps keep KeepMemo free and ad-free.</p>
-              <span class="store-link">ko-fi.com/marasontleitu →</span>
-            </a>
-            <a class="support-card" href="https://nowpayments.io/donation?api_key=7a581856-5b50-4d20-815a-83e268a1fcdf" target="_blank" rel="noreferrer noopener">
-              <span class="support-card-icon">◈</span>
-              <h3>Donate crypto</h3>
-              <p>Prefer crypto? Send a tip securely through NOWPayments.</p>
-              <span class="store-link">Donate with crypto →</span>
-            </a>
-            <a class="support-card" href="mailto:cleverstar02@gmail.com?subject=KeepMemo%20hello">
-              <span class="support-card-icon">✉️</span>
-              <h3>Say hello</h3>
-              <p>Feedback, ideas, or just a thank-you note — I read every message.</p>
-              <span class="store-link">cleverstar02@gmail.com →</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="feedback" style="border-left:none;border-right:none;padding-left:0;padding-right:0;max-width:none">
-    <div class="section-head"><p class="eyebrow">I'd love to hear from you</p></div>
-    <div class="ln">
-      <div class="ln-content">
-        <div class="feedback-layout">
-          <div class="feedback-intro">
-            <h2 class="section-title" style="margin-bottom:16px">Share your feedback</h2>
-            <p>Found a bug? Have an idea? Something that would make KeepMemo feel more like home for you? Your message goes directly to the developer.</p>
-            <p>Every note is read. The best features often start as a simple message from someone who cares about the people in their life.</p>
-            <div class="feedback-contact">
-              <a href="mailto:cleverstar02@gmail.com?subject=KeepMemo%20Feedback">✉️ cleverstar02@gmail.com</a>
-              <a href="https://cleversta.github.io/about_me/" target="_blank" rel="noreferrer noopener">👋 About the developer — Marason Tleitu</a>
+        <div class="hero-visual">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <div class="mock-header">
+                <div class="mock-title">Today</div>
+                <div class="mock-avatar">Y</div>
+              </div>
+              <div class="mock-card highlight">
+                <div class="mock-card-label">On This Day</div>
+                <div class="mock-card-text">"We walked by the river and talked until the streetlights came on."</div>
+                <span class="mock-tag">2 years ago · Maya</span>
+              </div>
+              <div class="mock-card">
+                <div class="mock-card-label">Coming up</div>
+                <div class="mock-card-text">Dad's birthday — in 4 days</div>
+              </div>
+              <div class="mock-card">
+                <div class="mock-card-label">Recent memory</div>
+                <div class="mock-card-text">Coffee with Sam · voice note</div>
+              </div>
             </div>
           </div>
+          <div class="floating-badge top-right"><span class="badge-dot"></span>Birthday reminder set</div>
+          <div class="floating-badge bottom-left">🎁 Gift logged for Mom</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="feedback-form">
-            <form id="feedbackForm">
-              <div class="form-group">
-                <label for="fb-name">Your name (optional)</label>
-                <input type="text" id="fb-name" name="name" placeholder="How should I call you?"/>
-              </div>
-              <div class="form-group">
-                <label for="fb-type">Type of message</label>
-                <select id="fb-type" name="type">
-                  <option value="General feedback">General feedback</option>
-                  <option value="Bug report">Bug report</option>
-                  <option value="Feature idea">Feature idea</option>
-                  <option value="Question">Question</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="fb-message">Your message</label>
-                <textarea id="fb-message" name="message" placeholder="Tell me what's on your mind…" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary" style="width:100%">Send feedback</button>
-              <p class="form-note">Tries to open your email app. If nothing opens, use the fallback below — nothing is stored on any server.</p>
-            </form>
+  <!-- ========== CORE FEATURES ========== -->
+  <section class="section features" id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Not another contacts app</span>
+        <h2>One place for memories, birthdays, gifts &amp; plans</h2>
+        <p>KeepMemo is a private notebook and relationship journal — for stories, important dates, gift history, and the feelings that make people matter.</p>
+      </div>
 
-            <div id="feedbackFallback" class="feedback-fallback" hidden>
-              <p class="feedback-fallback-title">Email app didn't open?</p>
-              <p>Send your message manually to:</p>
-              <p><a href="mailto:cleverstar02@gmail.com" id="fallbackEmailLink"><strong>cleverstar02@gmail.com</strong></a></p>
-              <button type="button" class="btn btn-ghost" id="copyEmailBtn" style="width:100%;margin-top:10px">Copy email address</button>
-              <pre id="fallbackPreview" class="feedback-preview"></pre>
-              <button type="button" class="btn btn-ghost" id="copyMessageBtn" style="width:100%;margin-top:8px">Copy full message</button>
-              <p id="copyStatus" class="form-note" style="margin-top:8px"></p>
+      <div class="features-grid">
+        <article class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon">👥</div>
+          <h3>Rich people profiles</h3>
+          <p>20+ relationship types, 20+ milestone date labels, favourites, personality notes, and emotional-moment fields for everyone who matters.</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon">📸</div>
+          <h3>Photo, voice &amp; video memories</h3>
+          <p>Save moments in any format. Tag people, star favourites, and search your memory journal anytime.</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-3">
+          <div class="feature-icon">📔</div>
+          <h3>Private journal</h3>
+          <p>A calm offline diary for your thoughts. Attach photos or voice. Link entries to the people they're about.</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-4">
+          <div class="feature-icon">🎁</div>
+          <h3>Gift intelligence</h3>
+          <p>Log every gift given and received, by person and occasion. Never repeat a gift again.</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-5">
+          <div class="feature-icon">📅</div>
+          <h3>Plans, not tasks</h3>
+          <p>Moments you want to have. Set a date, or keep it as "Someday" — a dream without a deadline.</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-6">
+          <div class="feature-icon">🌅</div>
+          <h3>On This Day</h3>
+          <p>Every morning, a memory from a past year quietly resurfaces — like opening an old letter.</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-6">
+          <div class="feature-icon">✨</div>
+          <h3>Memory &amp; card maker</h3>
+          <p>Turn any photo into a beautiful card — 16 styles, for memories or freeform sharing.</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-6">
+          <div class="feature-icon">🔔</div>
+          <h3>Reminders that don't miss</h3>
+          <p>Birthdays, anniversaries, and check-ins — notified the day before and on the day.</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-6">
+          <div class="feature-icon">🔒</div>
+          <h3>Private app lock</h3>
+          <p>PIN and optional biometrics. Your emotional notebook stays yours, even off your phone's screen.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INSIGHTS SIGNATURE FEATURE ========== -->
+  <section class="section insights-section" id="insights">
+    <div class="container">
+      <div class="insights-layout">
+        <div class="insights-content reveal">
+          <span class="eyebrow">Ask, don't dig</span>
+          <h2>Insights — tap questions about your own memories</h2>
+          <p class="lead">
+            A private, tap-first guide to what you've already saved. Ask about upcoming dates,
+            a person, a memory, a gift, or a plan — and get an instant answer pulled straight
+            from your own local data.
+          </p>
+          <ul class="insights-list">
+            <li><strong>No cloud AI.</strong> No model download, no server call — Insights reads only your local database, on your device.</li>
+            <li><strong>Never invents anything.</strong> Answers come only from what you've actually saved. Nothing is generated or guessed.</li>
+            <li><strong>Tap to open.</strong> When an answer mentions a person, memory, or plan, tap it to jump straight there.</li>
+          </ul>
+          <p class="insights-note">Separate from Insights: <strong>Create a Card</strong> — a freeform card maker for any photo on your phone, with 16 styles, captions, and sizing for feeds and posts.</p>
+        </div>
+        <div class="insights-visual reveal">
+          <div class="insight-card"><span class="insight-q">"What's coming up this week?"</span><span class="insight-a">Dad's birthday in 4 days · Coffee with Sam, Saturday</span></div>
+          <div class="insight-card"><span class="insight-q">"What have I given Mom?"</span><span class="insight-a">3 gifts logged · Last: scarf, her birthday 2025</span></div>
+          <div class="insight-card"><span class="insight-q">"Show me memories with Maya"</span><span class="insight-a">12 memories · 4 photos · 2 voice notes</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SCREENSHOTS ========== -->
+  <section class="section screenshots" id="screenshots">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">See it in action</span>
+        <h2>A closer look at KeepMemo</h2>
+        <p>Real screens from the app — people, memories, journal, and On This Day.</p>
+      </div>
+      <div class="screenshot-gallery">
+        <div class="shot"><img src="assets/keepmemo1.jpg" alt="KeepMemo screenshot 1" loading="lazy" data-gallery="km" data-index="0"></div>
+        <div class="shot"><img src="assets/keepmemo2.jpg" alt="KeepMemo screenshot 2" loading="lazy" data-gallery="km" data-index="1"></div>
+        <div class="shot"><img src="assets/keepmemo3.jpg" alt="KeepMemo screenshot 3" loading="lazy" data-gallery="km" data-index="2"></div>
+        <div class="shot"><img src="assets/keepmemo4.jpg" alt="KeepMemo screenshot 4" loading="lazy" data-gallery="km" data-index="3"></div>
+        <div class="shot"><img src="assets/keepmemo5.jpg" alt="KeepMemo screenshot 5" loading="lazy" data-gallery="km" data-index="4"></div>
+        <div class="shot"><img src="assets/keepmemo6.jpg" alt="KeepMemo screenshot 6" loading="lazy" data-gallery="km" data-index="5"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MORE INSIDE THE APP ========== -->
+  <section class="section more-features">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">And there's more</span>
+        <h2>Quietly powerful, underneath the calm</h2>
+        <p>Small tools that add up — for people who want to stay close to the ones they love.</p>
+      </div>
+      <div class="more-grid">
+        <div class="more-item reveal"><div class="more-icon">🤝</div><h4>Check-ins</h4><p>Set a recurring reminder for people who live far away, so they never drift out of touch.</p></div>
+        <div class="more-item reveal"><div class="more-icon">🔍</div><h4>Search &amp; tags</h4><p>Search across people, memories, and journal entries. Organise memories with custom tags.</p></div>
+        <div class="more-item reveal"><div class="more-icon">🗓️</div><h4>Timeline</h4><p>See your memories, journal entries, and moments unfold in one chronological view.</p></div>
+        <div class="more-item reveal"><div class="more-icon">⭐</div><h4>Starred favourites</h4><p>Mark the memories that matter most for quick access anytime.</p></div>
+        <div class="more-item reveal"><div class="more-icon">🖼️</div><h4>Gallery view</h4><p>Browse all your photo and video memories visually, filtered by person, date, or tag.</p></div>
+        <div class="more-item reveal"><div class="more-icon">📊</div><h4>Year in Review</h4><p>A curated annual summary of your most meaningful people, memories, and moments.</p></div>
+        <div class="more-item reveal"><div class="more-icon">📱</div><h4>Home screen widgets</h4><p>Recent memories, upcoming reminders, or today's On This Day moment, at a glance.</p></div>
+        <div class="more-item reveal"><div class="more-icon">💾</div><h4>Backup &amp; restore</h4><p>Export or import a backup file anytime. Optional periodic auto-backup, fully local.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== USE CASES ========== -->
+  <section class="section use-cases" id="use-cases">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Search for what you need</span>
+        <h2>Private journal, birthday reminder, gift tracker &amp; more</h2>
+        <p>People find KeepMemo when they look for a private journal app, offline diary, anniversary reminder, emotional notebook, or a simple way to keep friends and family close.</p>
+      </div>
+      <div class="use-cases-grid">
+        <div class="use-case reveal reveal-delay-1"><div class="use-case-icon">💝</div><div><h4>Relationship journal &amp; private notes</h4><p>Write about the people you love. Every entry can link to their profile so nothing gets lost.</p></div></div>
+        <div class="use-case reveal reveal-delay-2"><div class="use-case-icon">🎂</div><div><h4>Birthday &amp; anniversary reminders</h4><p>Never miss another important date, notified the day before and on the day.</p></div></div>
+        <div class="use-case reveal reveal-delay-3"><div class="use-case-icon">📓</div><div><h4>Private notebook &amp; offline diary</h4><p>A calm private notebook for your thoughts. Fully offline. No account. No one else can see your diary.</p></div></div>
+        <div class="use-case reveal reveal-delay-4"><div class="use-case-icon">🎁</div><div><h4>Gift tracker app</h4><p>Remember every gift you've given and received. A simple gift history for thoughtful people.</p></div></div>
+        <div class="use-case reveal reveal-delay-4"><div class="use-case-icon">🕊️</div><div><h4>Preserving memories of someone gone</h4><p>Keep stories, photos, and voice notes of someone you've lost — a memory doesn't fade once it's written down.</p></div></div>
+        <div class="use-case reveal reveal-delay-4"><div class="use-case-icon">🤝</div><div><h4>Keep friends &amp; family close</h4><p>Set check-in reminders so the people you care about don't drift away just because life is busy.</p></div></div>
+        <div class="use-case reveal reveal-delay-4"><div class="use-case-icon">🌿</div><div><h4>Emotional diary &amp; memory keeper</h4><p>Capture feelings, not only facts. Voice notes, quiet reflections, and the small moments that matter most.</p></div></div>
+        <div class="use-case reveal reveal-delay-4"><div class="use-case-icon">📴</div><div><h4>Offline journal for Android</h4><p>Works without internet. Your private journal lives on your phone. Optional backup only when you choose.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section class="section how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Simple by design</span>
+        <h2>How KeepMemo works</h2>
+        <p>No complicated setup. Just start with the people who matter.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal reveal-delay-1"><div class="step-number">1</div><h3>Add someone</h3><p>Create a profile with their photo, birthday, important dates, and the little things that make them them.</p></div>
+        <div class="step reveal reveal-delay-2"><div class="step-number">2</div><h3>Capture moments</h3><p>Save photos, voice notes, videos, or written memories. Link them to the person they belong to.</p></div>
+        <div class="step reveal reveal-delay-3"><div class="step-number">3</div><h3>Plan &amp; remember</h3><p>Set reminders for birthdays and plans. Log gifts. Write in your private journal.</p></div>
+        <div class="step reveal reveal-delay-4"><div class="step-number">4</div><h3>Rediscover</h3><p>Every morning, On This Day brings back a memory from the past — or ask Insights directly.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRIVACY ========== -->
+  <section class="section privacy-section" id="privacy">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Your data never leaves you</span>
+        <h2>Privacy is not a feature.<br>It's the foundation.</h2>
+        <p>KeepMemo was built offline-first on purpose. Your memories stay on your device unless you decide otherwise.</p>
+      </div>
+      <div class="privacy-grid">
+        <div class="privacy-item reveal reveal-delay-1"><h3>Completely free &amp; ad-free</h3><p>No ads, no subscriptions, no paywalls. Built as the opposite of apps that monetize your attention.</p></div>
+        <div class="privacy-item reveal reveal-delay-2"><h3>No account needed</h3><p>Open the app and start. No email, no sign-up, no tracking profile created behind the scenes.</p></div>
+        <div class="privacy-item reveal reveal-delay-3"><h3>Everything stays local</h3><p>Data lives in a local database on your phone. Even Insights answers using only that local data — no cloud AI, ever.</p></div>
+      </div>
+      <p class="privacy-note reveal">Optional, and only if you choose: export a backup file anytime, enable periodic local auto-backup, or sign in with Google to sync backups to your own Drive. Nothing leaves your device without your action.</p>
+      <p class="text-center mt-2" style="margin-top: 1.5rem;">
+        <a href="https://cleversta.github.io/privacy-policy/" target="_blank" rel="noopener" style="color: var(--sepia); font-size: 1rem;">Read the full Privacy Policy →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== FUTURE / ROADMAP ========== -->
+  <section class="section future-section" id="future">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">What's next</span>
+        <h2>Future of KeepMemo</h2>
+        <p>KeepMemo will keep growing quietly. Here are some directions being explored — your feedback helps decide what comes first.</p>
+      </div>
+      <div class="roadmap-grid">
+        <article class="roadmap-card reveal reveal-delay-1"><span class="roadmap-status soon">Coming soon</span><h3>iOS version</h3><p>Bring the same private, offline experience to iPhone and iPad users.</p></article>
+        <article class="roadmap-card reveal reveal-delay-2"><span class="roadmap-status soon">Coming soon</span><h3>More card styles</h3><p>Additional gentle designs for Create a Card so every memory can feel unique.</p></article>
+        <article class="roadmap-card reveal reveal-delay-3"><span class="roadmap-status exploring">Exploring</span><h3>Richer widgets</h3><p>More home-screen widget layouts for On This Day, upcoming dates, and recent memories.</p></article>
+        <article class="roadmap-card reveal reveal-delay-4"><span class="roadmap-status exploring">Exploring</span><h3>Export as PDF book</h3><p>Turn a person's memories into a printable keepsake book you can hold.</p></article>
+        <article class="roadmap-card reveal reveal-delay-5"><span class="roadmap-status idea">Idea</span><h3>Shared moments (optional)</h3><p>A carefully designed way to share selected memories with someone — still private by default.</p></article>
+        <article class="roadmap-card reveal reveal-delay-6"><span class="roadmap-status idea">Idea</span><h3>Your suggestions</h3><p>Have an idea that would make KeepMemo more meaningful for you? Send it below — real user ideas shape the roadmap.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SUPPORT DEVELOPER ========== -->
+  <section class="section support-section" id="support">
+    <div class="container">
+      <div class="support-layout">
+        <div class="support-intro reveal">
+          <span class="eyebrow">Built solo · Shipped free</span>
+          <h2>Support the developer</h2>
+          <p>KeepMemo is made by <strong>Marason Tleitu</strong> — a self-taught developer based in Malaysia. The app is completely free, with no ads and no subscriptions, on purpose.</p>
+          <p>I got tired of opening apps full of ads, or "free" products that quietly monetize users. So I build the opposite: useful tools for everyday life, free for everyone, nothing hidden.</p>
+          <p>I currently work at a restaurant to get by while I build these apps. If KeepMemo made your day a little easier, a small tip helps me keep everything free for everyone.</p>
+          <p><a href="https://cleversta.github.io/about_me/" target="_blank" rel="noopener">More about me →</a></p>
+        </div>
+        <div class="support-cards reveal">
+          <a class="support-card" href="https://ko-fi.com/marasontleitu" target="_blank" rel="noopener noreferrer">
+            <div class="support-card-icon">☕</div><h3>Buy me a coffee</h3><p>Support on Ko-fi — any amount helps keep KeepMemo free and ad-free.</p>
+            <span class="support-card-link">ko-fi.com/marasontleitu →</span>
+          </a>
+          <a class="support-card" href="https://nowpayments.io/donation?api_key=7a581856-5b50-4d20-815a-83e268a1fcdf" target="_blank" rel="noopener noreferrer">
+            <div class="support-card-icon">◈</div><h3>Donate crypto</h3><p>Prefer crypto? You can send a tip securely through NOWPayments.</p>
+            <span class="support-card-link">Donate with crypto →</span>
+          </a>
+          <a class="support-card" href="mailto:cleverstar02@gmail.com?subject=KeepMemo%20hello">
+            <div class="support-card-icon">✉️</div><h3>Say hello</h3><p>Feedback, ideas, or just a thank-you note — I read every message.</p>
+            <span class="support-card-link">cleverstar02@gmail.com →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEEDBACK ========== -->
+  <section class="section feedback-section" id="feedback">
+    <div class="container">
+      <div class="feedback-layout">
+        <div class="feedback-intro reveal">
+          <span class="eyebrow">I'd love to hear from you</span>
+          <h2>Share your feedback</h2>
+          <p>Found a bug? Have an idea? Something that would make KeepMemo feel more like home for you? Your message goes directly to the developer.</p>
+          <p>Every note is read. The best features often start as a simple message from someone who cares about the people in their life.</p>
+          <div class="feedback-contact">
+            <a href="mailto:cleverstar02@gmail.com?subject=KeepMemo%20Feedback">✉️ cleverstar02@gmail.com</a>
+            <a href="https://cleversta.github.io/about_me/" target="_blank" rel="noopener">👋 About the developer — Marason Tleitu</a>
+          </div>
+        </div>
+
+        <div class="feedback-form reveal">
+          <form id="feedbackForm">
+            <div class="form-group"><label for="fb-name">Your name (optional)</label><input type="text" id="fb-name" name="name" placeholder="How should I call you?" /></div>
+            <div class="form-group">
+              <label for="fb-type">Type of message</label>
+              <select id="fb-type" name="type">
+                <option value="General feedback">General feedback</option>
+                <option value="Bug report">Bug report</option>
+                <option value="Feature idea">Feature idea</option>
+                <option value="Question">Question</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
+            <div class="form-group"><label for="fb-message">Your message</label><textarea id="fb-message" name="message" placeholder="Tell me what's on your mind…" required></textarea></div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send feedback</button>
+            <p class="form-note">Tries to open your email app. If nothing opens, use the fallback below — nothing is stored on any server.</p>
+          </form>
+
+          <div id="feedbackFallback" class="feedback-fallback" hidden>
+            <p class="feedback-fallback-title">Email app didn't open?</p>
+            <p>Send your message manually to:</p>
+            <p><a href="mailto:cleverstar02@gmail.com" id="fallbackEmailLink"><strong>cleverstar02@gmail.com</strong></a></p>
+            <button type="button" class="btn btn-secondary" id="copyEmailBtn" style="width: 100%; margin-top: 0.75rem;">Copy email address</button>
+            <pre id="fallbackPreview" class="feedback-preview"></pre>
+            <button type="button" class="btn btn-secondary" id="copyMessageBtn" style="width: 100%; margin-top: 0.5rem;">Copy full message</button>
+            <p id="copyStatus" class="form-note" style="margin-top: 0.6rem;"></p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="faq" style="border-left:none;border-right:none;padding-left:0;padding-right:0;max-width:none">
-    <div class="section-head">
-      <p class="eyebrow">Common questions</p>
-      <h2 class="section-title">Frequently asked questions</h2>
-      <p class="section-sub">Quick answers about this private journal, birthday reminder, and offline memory app.</p>
-    </div>
-    <div class="ln">
-      <div class="ln-content">
-        <div class="faq-list">
-          <details class="faq-item"><summary>Is KeepMemo free?</summary><p>Yes — completely free. No paid tier, no subscriptions, and no in-app purchases required to use the app. Download it on Google Play and start your private journal with no account.</p></details>
-          <details class="faq-item"><summary>Does KeepMemo have ads?</summary><p>No. KeepMemo is ad-free. There are no banners, no video ads, and no "watch an ad to unlock" features. The app was built to stay free for everyone without selling your attention.</p></details>
-          <details class="faq-item"><summary>Does KeepMemo work offline?</summary><p>Yes. It is an offline-first journal app. Birthdays, memories, gifts, plans, and notes all work without internet. Backup is optional and under your control.</p></details>
-          <details class="faq-item"><summary>Is my data private?</summary><p>Yes. Your private notebook stays on your device by default. There is no account sign-up and no cloud AI reading your journal. You can also enable app lock with PIN or biometrics.</p></details>
-          <details class="faq-item"><summary>Can it remind me of birthdays and anniversaries?</summary><p>Yes. KeepMemo is a birthday reminder and anniversary reminder app. You get gentle notifications the day before and on the day, with flexible frequencies.</p></details>
-          <details class="faq-item"><summary>What is On This Day?</summary><p>On This Day resurfaces a memory from the same date in a past year — like finding an old entry in your emotional diary. It helps you rediscover moments you saved.</p></details>
-          <details class="faq-item"><summary>Can I track gifts and make memory cards?</summary><p>Yes. The gift tracker logs gifts given and received by person. Create a Card turns any photo into a beautiful memory card you can save or share.</p></details>
-        </div>
+  <!-- ========== FAQ ========== -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Common questions</span>
+        <h2>Frequently asked questions about KeepMemo</h2>
+        <p>Quick answers about this private journal, birthday reminder, and offline memory app.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item reveal"><summary>Is KeepMemo free?</summary><p>Yes — completely free. No paid tier, no subscriptions, and no in-app purchases required to use the app. Download it on Google Play and start your private journal with no account.</p></details>
+        <details class="faq-item reveal"><summary>Does KeepMemo have ads?</summary><p>No. KeepMemo is ad-free. There are no banners, no video ads, and no "watch an ad to unlock" features. The app was built to stay free for everyone without selling your attention.</p></details>
+        <details class="faq-item reveal"><summary>Does KeepMemo work offline?</summary><p>Yes. It is an offline-first journal app. Birthdays, memories, gifts, plans, and notes all work without internet. Backup and Google Drive sync are optional and off by default.</p></details>
+        <details class="faq-item reveal"><summary>Is my data private?</summary><p>Yes. Your private notebook stays on your device by default. There is no account sign-up and no cloud AI reading your journal. You can also enable app lock with PIN or biometrics.</p></details>
+        <details class="faq-item reveal"><summary>What is Insights?</summary><p>Insights is a tap-first way to ask questions about what you've already saved — upcoming dates, people, memories, gifts, and plans. It runs entirely on your device using your local data, with no cloud AI and no language model download.</p></details>
+        <details class="faq-item reveal"><summary>Can it remind me of birthdays and anniversaries?</summary><p>Yes. KeepMemo is a birthday reminder and anniversary reminder app. You get gentle notifications the day before and on the day, with flexible frequencies.</p></details>
+        <details class="faq-item reveal"><summary>What is On This Day?</summary><p>On This Day resurfaces a memory from the same date in a past year — like finding an old entry in your emotional diary. It helps you rediscover moments you saved.</p></details>
+        <details class="faq-item reveal"><summary>Can I track gifts and make memory cards?</summary><p>Yes. The gift tracker logs gifts given and received by person. Create a Card turns any photo into a beautiful memory card you can save or share.</p></details>
       </div>
     </div>
   </section>
 
-  <section id="download" style="border-left:none;border-right:none;padding-left:0;padding-right:0;max-width:none">
-    <div class="ln">
-      <div class="ln-content">
-        <div class="cta-box">
-          <p class="eyebrow">100% free · No ads</p>
-          <h2 class="section-title">Download KeepMemo free on Google Play</h2>
-          <p class="section-sub" style="margin:0 auto 24px">Private offline journal, birthday reminders, gift tracker, and memory cards. Completely free, ad-free, no account required.</p>
-          <a href="https://play.google.com/store/apps/details?id=com.keepmemo.app" class="btn btn-primary" target="_blank" rel="noreferrer noopener">Get it free on Google Play</a>
-          <p style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--ink-soft);margin-top:16px">Android · Completely free · No ads · No account</p>
-        </div>
-      </div>
+  <!-- ========== DOWNLOAD CTA ========== -->
+  <section class="cta-banner reveal" id="download">
+    <div class="container">
+      <span class="eyebrow">100% free · No ads</span>
+      <h2>Download KeepMemo free on Google Play</h2>
+      <p class="lead">Private offline journal, birthday reminders, gift tracker, on-device Insights, and memory cards. Completely free, ad-free, no account required.</p>
+      <a href="https://play.google.com/store/apps/details?id=com.keepmemo.app" class="btn btn-primary" rel="noopener" target="_blank">Get it free on Google Play</a>
+      <p class="mt-2" style="font-size: 0.9rem; color: var(--ink-tertiary);">Android · Completely free · No ads · No account</p>
+      <p class="mt-2" style="font-size: 0.95rem; color: var(--ink-secondary); max-width: 420px; margin: 1.25rem auto 0;">
+        If KeepMemo helps you, you can <a href="#support" style="color: var(--accent); font-weight: 600;">support the developer</a> so it stays free for everyone.
+      </p>
     </div>
   </section>
 
-</main>
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-mark"><img src="assets/app-icon.png" alt="KeepMemo app icon" width="36" height="36" /></span>
+            KeepMemo
+          </a>
+          <p>Preserve the people you love. A private, offline-first relationship memory keeper.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#insights">Insights</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#download">Download</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal &amp; Info</h4>
+          <ul>
+            <li><a href="https://cleversta.github.io/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a></li>
+            <li><a href="https://cleversta.github.io/about_me/" target="_blank" rel="noopener">About the Developer</a></li>
+            <li><a href="#support">Support / Donate</a></li>
+            <li><a href="#feedback">Send feedback</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:cleverstar02@gmail.com">cleverstar02@gmail.com</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.keepmemo.app" target="_blank" rel="noopener">Google Play</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 KeepMemo · Built solo by Marason Tleitu · Free, no ads</span>
+        <span>Made with care for the people who matter.</span>
+      </div>
+    </div>
+  </footer>
 
-<footer>
-  <span>keepmemo.log</span>
-  <span>© 2026 — built solo by Marason Tleitu, shipped for free.</span>
-</footer>
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+    <img id="lightboxImg" src="" alt=""/>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
+    <div class="lightbox-count" id="lightboxCount"></div>
+  </div>
 
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
-  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
-  <img id="lightboxImg" src="" alt=""/>
-  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
-  <div class="lightbox-count" id="lightboxCount"></div>
-</div>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (menuToggle) menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
 
-<script>
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
-  if (menuToggle) {
-    menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-  }
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => navLinks.classList.remove('open'));
-  });
+    const header = document.querySelector('.site-header');
+    const onScroll = () => { window.scrollY > 20 ? header.classList.add('scrolled') : header.classList.remove('scrolled'); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
-  const nav = document.getElementById('siteNav');
-  const onScroll = () => { window.scrollY > 12 ? nav.classList.add('scrolled') : nav.classList.remove('scrolled'); };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); } });
-    }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
-    document.querySelectorAll('.ln').forEach(el => io.observe(el));
-  } else {
-    document.querySelectorAll('.ln').forEach(el => el.classList.add('in-view'));
-  }
-
-  (function () {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxCount = document.getElementById('lightboxCount');
-    const btnClose = document.getElementById('lightboxClose');
-    const btnPrev = document.getElementById('lightboxPrev');
-    const btnNext = document.getElementById('lightboxNext');
-    let gallery = [], idx = 0, lastFocused = null;
-
-    function build(name) {
-      return Array.from(document.querySelectorAll(`img[data-gallery="${name}"]`))
-        .sort((a, b) => Number(a.dataset.index) - Number(b.dataset.index));
+    const revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('visible'); io.unobserve(entry.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      revealEls.forEach((el) => io.observe(el));
+    } else {
+      revealEls.forEach((el) => el.classList.add('visible'));
     }
-    function show(i) {
-      if (!gallery.length) return;
-      idx = (i + gallery.length) % gallery.length;
-      lightboxImg.src = gallery[idx].src;
-      lightboxImg.alt = gallery[idx].alt;
-      lightboxCount.textContent = `${idx + 1} / ${gallery.length}`;
-    }
-    function open(name, i) {
-      gallery = build(name);
-      if (!gallery.length) return;
-      lastFocused = document.activeElement;
-      show(i);
-      lightbox.classList.add('open');
-      lightbox.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      btnClose.focus();
-    }
-    function close() {
-      lightbox.classList.remove('open');
-      lightbox.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-      lightboxImg.src = '';
-      if (lastFocused) lastFocused.focus();
-    }
-    document.querySelectorAll('.shot-slot img[data-gallery]').forEach(img => {
-      img.addEventListener('click', () => open(img.dataset.gallery, Number(img.dataset.index)));
-    });
-    btnClose.addEventListener('click', close);
-    btnPrev.addEventListener('click', () => show(idx - 1));
-    btnNext.addEventListener('click', () => show(idx + 1));
-    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) close(); });
-    document.addEventListener('keydown', (e) => {
-      if (!lightbox.classList.contains('open')) return;
-      if (e.key === 'Escape') close();
-      if (e.key === 'ArrowLeft') show(idx - 1);
-      if (e.key === 'ArrowRight') show(idx + 1);
-    });
-    let touchStartX = 0;
-    lightbox.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
-    lightbox.addEventListener('touchend', (e) => {
-      const dx = e.changedTouches[0].clientX - touchStartX;
-      if (Math.abs(dx) > 40) dx > 0 ? show(idx - 1) : show(idx + 1);
-    }, { passive: true });
-  })();
 
-  const feedbackForm = document.getElementById('feedbackForm');
-  const feedbackFallback = document.getElementById('feedbackFallback');
-  const fallbackPreview = document.getElementById('fallbackPreview');
-  const copyStatus = document.getElementById('copyStatus');
+    (function () {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxCount = document.getElementById('lightboxCount');
+      const btnClose = document.getElementById('lightboxClose');
+      const btnPrev = document.getElementById('lightboxPrev');
+      const btnNext = document.getElementById('lightboxNext');
+      let gallery = [], idx = 0, lastFocused = null;
 
-  function buildFeedbackText(name, type, message) {
-    let text = '';
-    if (name) text += 'Name: ' + name + '\n';
-    text += 'Type: ' + type + '\n\n';
-    text += message;
-    return text;
-  }
-  function openMailto(subject, body) {
-    const url = 'mailto:cleverstar02@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    const a = document.createElement('a');
-    a.href = url; a.style.display = 'none';
-    document.body.appendChild(a); a.click(); document.body.removeChild(a);
-    setTimeout(() => { try { window.location.href = url; } catch (err) {} }, 150);
-    return url;
-  }
-  function copyText(text) {
-    if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text);
-    const ta = document.createElement('textarea');
-    ta.value = text; ta.setAttribute('readonly', '');
-    ta.style.position = 'absolute'; ta.style.left = '-9999px';
-    document.body.appendChild(ta); ta.select();
-    document.execCommand('copy'); document.body.removeChild(ta);
-    return Promise.resolve();
-  }
-  if (feedbackForm) {
-    feedbackForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const name = document.getElementById('fb-name').value.trim();
-      const type = document.getElementById('fb-type').value;
-      const message = document.getElementById('fb-message').value.trim();
-      if (!message) { document.getElementById('fb-message').focus(); return; }
-      const subject = 'KeepMemo — ' + type;
-      const body = buildFeedbackText(name, type, message);
-      openMailto(subject, body);
-      if (feedbackFallback && fallbackPreview) {
-        fallbackPreview.textContent = 'To: cleverstar02@gmail.com\nSubject: ' + subject + '\n\n' + body;
-        feedbackFallback.hidden = false;
-        if (copyStatus) copyStatus.textContent = 'If your email app did not open, copy the message below and send it manually.';
-        feedbackFallback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      function build(name) {
+        return Array.from(document.querySelectorAll(`img[data-gallery="${name}"]`)).sort((a, b) => Number(a.dataset.index) - Number(b.dataset.index));
       }
-    });
-  }
-  const copyEmailBtn = document.getElementById('copyEmailBtn');
-  if (copyEmailBtn) {
-    copyEmailBtn.addEventListener('click', function () {
-      copyText('cleverstar02@gmail.com').then(() => { if (copyStatus) copyStatus.textContent = 'Email address copied.'; });
-    });
-  }
-  const copyMessageBtn = document.getElementById('copyMessageBtn');
-  if (copyMessageBtn) {
-    copyMessageBtn.addEventListener('click', function () {
+      function show(i) {
+        if (!gallery.length) return;
+        idx = (i + gallery.length) % gallery.length;
+        lightboxImg.src = gallery[idx].src;
+        lightboxImg.alt = gallery[idx].alt;
+        lightboxCount.textContent = `${idx + 1} / ${gallery.length}`;
+      }
+      function open(name, i) {
+        gallery = build(name);
+        if (!gallery.length) return;
+        lastFocused = document.activeElement;
+        show(i);
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        btnClose.focus();
+      }
+      function close() {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        lightboxImg.src = '';
+        if (lastFocused) lastFocused.focus();
+      }
+      document.querySelectorAll('.shot img[data-gallery]').forEach(img => img.addEventListener('click', () => open(img.dataset.gallery, Number(img.dataset.index))));
+      btnClose.addEventListener('click', close);
+      btnPrev.addEventListener('click', () => show(idx - 1));
+      btnNext.addEventListener('click', () => show(idx + 1));
+      lightbox.addEventListener('click', (e) => { if (e.target === lightbox) close(); });
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') show(idx - 1);
+        if (e.key === 'ArrowRight') show(idx + 1);
+      });
+      let touchStartX = 0;
+      lightbox.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
+      lightbox.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 40) dx > 0 ? show(idx - 1) : show(idx + 1);
+      }, { passive: true });
+    })();
+
+    const feedbackForm = document.getElementById('feedbackForm');
+    const feedbackFallback = document.getElementById('feedbackFallback');
+    const fallbackPreview = document.getElementById('fallbackPreview');
+    const copyStatus = document.getElementById('copyStatus');
+
+    function buildFeedbackText(name, type, message) {
+      let text = '';
+      if (name) text += 'Name: ' + name + '\n';
+      text += 'Type: ' + type + '\n\n';
+      text += message;
+      return text;
+    }
+    function openMailto(subject, body) {
+      const url = 'mailto:cleverstar02@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      const a = document.createElement('a');
+      a.href = url; a.style.display = 'none';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function () { try { window.location.href = url; } catch (err) {} }, 150);
+      return url;
+    }
+    function copyText(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text);
+      const ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute'; ta.style.left = '-9999px';
+      document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); document.body.removeChild(ta);
+      return Promise.resolve();
+    }
+    if (feedbackForm) {
+      feedbackForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const name = document.getElementById('fb-name').value.trim();
+        const type = document.getElementById('fb-type').value;
+        const message = document.getElementById('fb-message').value.trim();
+        if (!message) { document.getElementById('fb-message').focus(); return; }
+        const subject = 'KeepMemo — ' + type;
+        const body = buildFeedbackText(name, type, message);
+        openMailto(subject, body);
+        if (feedbackFallback && fallbackPreview) {
+          fallbackPreview.textContent = 'To: cleverstar02@gmail.com\nSubject: ' + subject + '\n\n' + body;
+          feedbackFallback.hidden = false;
+          if (copyStatus) copyStatus.textContent = 'If your email app did not open, copy the message below and send it manually.';
+          feedbackFallback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      });
+    }
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    if (copyEmailBtn) copyEmailBtn.addEventListener('click', function () { copyText('cleverstar02@gmail.com').then(function () { if (copyStatus) copyStatus.textContent = 'Email address copied.'; }); });
+    const copyMessageBtn = document.getElementById('copyMessageBtn');
+    if (copyMessageBtn) copyMessageBtn.addEventListener('click', function () {
       const text = fallbackPreview ? fallbackPreview.textContent : '';
-      copyText(text).then(() => { if (copyStatus) copyStatus.textContent = 'Full message copied. Paste it into your email app.'; });
+      copyText(text).then(function () { if (copyStatus) copyStatus.textContent = 'Full message copied. Paste it into your email app.'; });
     });
-  }
-</script>
+  </script>
 </body>
 </html>
