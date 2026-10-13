@@ -266,3 +266,36 @@ p{color:var(--ink-secondary);font-size:1.02rem}
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
   .reveal{opacity:1;transform:none}
 }
+
+/* Stronger calls to action and keyboard-visible focus */
+.btn-primary,
+.nav-cta {
+  background: #875237;
+  color: #fff !important;
+  border: 1px solid #75452f;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(83, 48, 31, 0.24);
+}
+.btn-primary:hover,
+.nav-cta:hover {
+  background: #70432e;
+  border-color: #603724;
+  color: #fff !important;
+}
+.btn-secondary {
+  border: 2px solid #9a6a4d;
+  font-weight: 600;
+}
+.btn-secondary:hover {
+  background: #f0e2d7;
+  border-color: #70432e;
+}
+.btn:focus-visible,
+.nav-cta:focus-visible,
+.menu-toggle:focus-visible,
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #2f5f76;
+  outline-offset: 3px;
+}
