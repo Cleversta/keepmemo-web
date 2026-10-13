@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cleversta.github.io/keepmemo/sitemap.xml
+Sitemap: https://cleversta.github.io/keepmemo-web/sitemap.xml
