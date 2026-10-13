@@ -34,8 +34,7 @@ Your site will be live at: **https://cleversta.github.io/keepmemo-web/**
 
 ## Before publishing
 
-- [ ] Replace the placeholder Google Play link in `index.html` with your real Play Store URL once the app is published:
-  `https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME`
-  (currently set to `com.keepmemo.app` as a placeholder — appears twice: in the Download CTA and the footer)
+- [x] Google Play links use the published app package: `com.cleversta.keepmemo`.
+- [x] `robots.txt` and `sitemap.xml` point to the live `keepmemo-web` site.
 - [ ] Confirm all six screenshots in `assets/` are portrait orientation (gallery slots are sized for phone aspect ratio)
 - [ ] Double-check `app-icon.png` renders cleanly at small sizes (used as a 22px nav icon and browser favicon)
