@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#faf8f5">
+  <meta name="theme-color" content="#f8f3ec">
   <meta name="robots" content="noindex, nofollow">
   <title>A little invitation | KeepMemo</title>
   <link rel="stylesheet" href="invite.css">
@@ -11,9 +11,51 @@
   <script src="invite.js" defer></script>
 </head>
 <body>
+  <svg class="garden-art" viewBox="0 0 1600 1100" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <g id="garden-flower">
+        <ellipse cx="0" cy="-17" rx="7" ry="15" />
+        <ellipse cx="0" cy="-17" rx="7" ry="15" transform="rotate(60)" />
+        <ellipse cx="0" cy="-17" rx="7" ry="15" transform="rotate(120)" />
+        <ellipse cx="0" cy="-17" rx="7" ry="15" transform="rotate(180)" />
+        <ellipse cx="0" cy="-17" rx="7" ry="15" transform="rotate(240)" />
+        <ellipse cx="0" cy="-17" rx="7" ry="15" transform="rotate(300)" />
+        <circle r="6" class="flower-center" />
+      </g>
+    </defs>
+    <g class="sprig sprig-left">
+      <path class="stem" d="M95 800 C110 625 200 465 250 270" />
+      <path class="leaf" d="M116 670 C45 642 43 601 53 584 C101 592 127 627 116 670Z" />
+      <path class="leaf" d="M171 550 C239 527 263 486 258 466 C212 473 180 509 171 550Z" />
+      <path class="leaf" d="M211 410 C145 390 125 352 132 334 C178 344 209 373 211 410Z" />
+      <g class="bloom bloom-rose" transform="translate(250 270) scale(1.08)"><use href="#garden-flower" /></g>
+      <g class="bloom bloom-cream" transform="translate(129 345) scale(.48)"><use href="#garden-flower" /></g>
+    </g>
+    <g class="sprig sprig-right">
+      <path class="stem" d="M1500 265 C1455 430 1400 620 1465 885" />
+      <path class="leaf" d="M1470 440 C1536 405 1567 428 1575 446 C1541 481 1495 478 1470 440Z" />
+      <path class="leaf" d="M1436 590 C1367 568 1345 590 1340 610 C1380 638 1423 625 1436 590Z" />
+      <path class="leaf" d="M1440 742 C1510 718 1532 746 1535 765 C1494 794 1454 778 1440 742Z" />
+      <g class="bloom bloom-cream" transform="translate(1500 265) scale(.76)"><use href="#garden-flower" /></g>
+      <g class="bloom bloom-rose" transform="translate(1460 880) scale(1.2)"><use href="#garden-flower" /></g>
+    </g>
+    <g class="bloom bloom-small bloom-sage" transform="translate(410 920) scale(.38)"><use href="#garden-flower" /></g>
+    <g class="bloom bloom-small bloom-rose" transform="translate(1185 180) scale(.34)"><use href="#garden-flower" /></g>
+  </svg>
+
   <main class="page">
     <article class="invitation" aria-labelledby="title">
-      <div class="flower" aria-hidden="true">♡</div>
+      <svg class="flower-mark" viewBox="0 0 72 72" aria-hidden="true">
+        <g class="mark-petals">
+          <ellipse cx="36" cy="19" rx="7" ry="13" />
+          <ellipse cx="36" cy="19" rx="7" ry="13" transform="rotate(60 36 36)" />
+          <ellipse cx="36" cy="19" rx="7" ry="13" transform="rotate(120 36 36)" />
+          <ellipse cx="36" cy="19" rx="7" ry="13" transform="rotate(180 36 36)" />
+          <ellipse cx="36" cy="19" rx="7" ry="13" transform="rotate(240 36 36)" />
+          <ellipse cx="36" cy="19" rx="7" ry="13" transform="rotate(300 36 36)" />
+          <circle cx="36" cy="36" r="6" class="mark-center" />
+        </g>
+      </svg>
       <p class="eyebrow">A little invitation</p>
       <h1 id="title">Would you like to go on a date?</h1>
       <p id="loading" class="muted" role="status">Opening your invitation…</p>
