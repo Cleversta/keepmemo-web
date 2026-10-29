@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf8f5">
+  <meta name="robots" content="noindex, nofollow">
+  <title>A little invitation | KeepMemo</title>
+  <link rel="stylesheet" href="invite.css">
+  <script src="invite-config.js"></script>
+  <script src="invite.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <article class="invitation" aria-labelledby="title">
+      <div class="flower" aria-hidden="true">♡</div>
+      <p class="eyebrow">A little invitation</p>
+      <h1 id="title">Would you like to go on a date?</h1>
+      <p id="loading" class="muted" role="status">Opening your invitation…</p>
+      <section id="invitationContent" hidden>
+        <p id="recipientGreeting" class="greeting"></p>
+        <p id="message" class="message"></p>
+        <form id="responseForm">
+          <fieldset>
+            <legend>Which day works for you?</legend>
+            <div id="dateOptions" class="choices"></div>
+          </fieldset>
+          <fieldset>
+            <legend>What would you like to do?</legend>
+            <div id="activityOptions" class="choices"></div>
+          </fieldset>
+          <label class="note-label" for="note">Add a note (optional)</label>
+          <textarea id="note" maxlength="500" rows="3" placeholder="Anything you want me to know?"></textarea>
+          <button id="submit" type="submit">Send my answer</button>
+        </form>
+      </section>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <p class="footer">Made with care in KeepMemo</p>
+    </article>
+  </main>
+</body>
+</html>

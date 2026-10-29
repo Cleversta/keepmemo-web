@@ -1,0 +1,54 @@
+:root {
+  color-scheme: light;
+  --paper: #faf8f5;
+  --card: #fffdf9;
+  --ink: #2f2a24;
+  --muted: #786b59;
+  --accent: #b07a5b;
+  --accent-soft: #faefe7;
+  --sage: #8e9a82;
+  --border: #e8dfd3;
+}
+* { box-sizing: border-box; }
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: radial-gradient(ellipse at top, #f8eee5 0, var(--paper) 56%);
+  color: var(--ink);
+  font-family: "Lora", Georgia, serif;
+}
+.page { min-height: 100vh; display: grid; place-items: center; padding: 24px 16px; }
+.invitation {
+  width: min(100%, 560px);
+  padding: clamp(28px, 7vw, 56px);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  box-shadow: 0 18px 55px #59463214;
+  text-align: center;
+}
+.flower { color: var(--accent); font: 44px/1 Georgia, serif; }
+.eyebrow { margin: 18px 0 8px; color: var(--accent); font: 600 12px/1.4 system-ui, sans-serif; letter-spacing: .18em; text-transform: uppercase; }
+h1 { margin: 0 auto 18px; max-width: 430px; font-size: clamp(32px, 7vw, 46px); font-weight: 500; line-height: 1.12; }
+.greeting, .message { color: var(--muted); line-height: 1.7; }
+.greeting { margin: 18px 0 4px; }
+.message { margin: 0 auto 28px; white-space: pre-wrap; }
+.muted, .status { color: var(--muted); font: 15px/1.6 system-ui, sans-serif; }
+fieldset { min-width: 0; margin: 0 0 22px; padding: 0; border: 0; text-align: left; }
+legend, .note-label { display: block; margin-bottom: 10px; font: 600 14px/1.4 system-ui, sans-serif; }
+.choices { display: grid; gap: 9px; }
+.choice { display: flex; align-items: center; gap: 11px; min-height: 48px; padding: 12px 14px; border: 1px solid var(--border); border-radius: 13px; color: var(--ink); cursor: pointer; font: 15px/1.4 system-ui, sans-serif; }
+.choice:has(input:checked) { border-color: var(--sage); background: #f0f3ed; }
+.choice input { accent-color: var(--sage); width: 18px; height: 18px; }
+textarea { width: 100%; resize: vertical; margin: 0 0 18px; padding: 12px; border: 1px solid var(--border); border-radius: 12px; color: var(--ink); background: white; font: 15px/1.5 system-ui, sans-serif; }
+textarea:focus, .choice:focus-within { outline: 2px solid #b07a5b66; outline-offset: 2px; }
+button { width: 100%; min-height: 50px; border: 0; border-radius: 14px; background: var(--accent); color: white; font: 600 15px system-ui, sans-serif; cursor: pointer; }
+button:disabled { opacity: .65; cursor: wait; }
+.status { min-height: 24px; margin: 16px 0 0; }
+.status.error { color: #a34338; }
+.footer { margin: 26px 0 0; color: #938777; font: 12px system-ui, sans-serif; }
+[hidden] { display: none !important; }
+@media (prefers-reduced-motion: no-preference) {
+  .invitation { animation: appear .45s ease-out both; }
+  @keyframes appear { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+}
