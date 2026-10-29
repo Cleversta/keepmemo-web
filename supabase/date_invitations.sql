@@ -58,15 +58,15 @@ begin
     date_options, activity_options
   ) values (
     p_invitation_id,
-    encode(extensions.digest(p_public_token, 'sha256'), 'hex'),
-    encode(extensions.digest(p_owner_token, 'sha256'), 'hex'),
+    encode(digest(p_public_token, 'sha256'), 'hex'),
+    encode(digest(p_owner_token, 'sha256'), 'hex'),
     v_name, v_message, v_dates, v_activities
   ) on conflict (id) do nothing;
 
   if not exists (
     select 1 from public.keepmemo_date_invitations
     where id = p_invitation_id
-      and owner_token_hash = encode(extensions.digest(p_owner_token, 'sha256'), 'hex')
+      and owner_token_hash = encode(digest(p_owner_token, 'sha256'), 'hex')
   ) then
     raise exception 'Invitation could not be published';
   end if;
@@ -89,7 +89,7 @@ as $$
     'responded', responded_at is not null
   )
   from public.keepmemo_date_invitations
-  where public_token_hash = encode(extensions.digest(p_public_token, 'sha256'), 'hex');
+  where public_token_hash = encode(digest(p_public_token, 'sha256'), 'hex');
 $$;
 
 create or replace function public.keepmemo_submit_date_invitation(
@@ -111,7 +111,7 @@ begin
   end if;
   select id into v_id
   from public.keepmemo_date_invitations
-  where public_token_hash = encode(extensions.digest(p_public_token, 'sha256'), 'hex')
+  where public_token_hash = encode(digest(p_public_token, 'sha256'), 'hex')
     and date_options ? p_chosen_date
     and activity_options ? p_chosen_activity;
   if v_id is null then
@@ -148,7 +148,7 @@ begin
   ) into v_result
   from public.keepmemo_date_invitations
   where id = p_invitation_id
-    and owner_token_hash = encode(extensions.digest(p_owner_token, 'sha256'), 'hex');
+    and owner_token_hash = encode(digest(p_owner_token, 'sha256'), 'hex');
   return v_result;
 end;
 $$;
