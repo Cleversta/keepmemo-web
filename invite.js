@@ -13,10 +13,10 @@
     status.className = 'status error';
   }
   function rpc(name, body) {
-    return fetch(config.supabaseUrl + '/rest/v1/rpc/' + name, {
+    return fetch(config.supabaseUrl.replace(/\/$/, '') + '/rest/v1/rpc/' + name, {
       method: 'POST',
       headers: {
-        apikey: config.anonKey,
+        apikey: config.publishableKey,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(body)
@@ -45,7 +45,7 @@
 
   async function loadInvite() {
     if (!token || !config.supabaseUrl || config.supabaseUrl.startsWith('SET_') ||
-        !config.anonKey || config.anonKey.startsWith('SET_')) {
+        !config.publishableKey || config.publishableKey.startsWith('SET_')) {
       showError('This invitation link is not ready yet. Please ask the sender to check it.');
       return;
     }
