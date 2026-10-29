@@ -1,5 +1,5 @@
-// Public configuration only. Never place a Supabase service-role key here.
+// This publishable key is intended for browser use. The service-role key must never go here.
 window.KEEP_MEMO_INVITE_CONFIG = {
-  supabaseUrl: "SET_SUPABASE_PROJECT_URL",
-  anonKey: "SET_SUPABASE_ANON_KEY"
+  supabaseUrl: "https://tlwdqvhqmmeujpravkzz.supabase.co",
+  anonKey: "sb_publishable_zAMOwQxWgMVbZEtXAbD8LA_Mr6tQVn-"
 };
