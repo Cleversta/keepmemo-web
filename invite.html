@@ -6,9 +6,9 @@
   <meta name="theme-color" content="#f8f3ec">
   <meta name="robots" content="noindex, nofollow">
   <title>A little invitation | KeepMemo</title>
-  <link rel="stylesheet" href="invite.css?v=rich1">
+  <link rel="stylesheet" href="invite.css?v=rich7">
   <script src="invite-config.js?v=20261101"></script>
-  <script src="invite.js?v=rich1" defer></script>
+  <script src="invite.js?v=rich7" defer></script>
 </head>
 <body>
   <svg class="garden-art" viewBox="0 0 1600 1100" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -56,22 +56,42 @@
           <circle cx="36" cy="36" r="6" class="mark-center" />
         </g>
       </svg>
-      <p class="eyebrow">A little invitation</p>
-      <h1 id="title">Would you like to go on a date?</h1>
+      <p class="eyebrow">Date request</p>
+      <h1 id="title">A little date request</h1>
       <p id="loading" class="muted" role="status">Opening your invitation…</p>
       <section id="invitationContent" hidden>
+        <nav id="flowProgress" class="flow-progress" aria-label="Request steps" hidden>
+          <span id="stepRequest" class="flow-step active"><b>1</b> The request</span>
+          <span id="stepPreferences" class="flow-step"><b>2</b> Your preferences</span>
+        </nav>
+        <section id="requestPage" class="flow-page">
         <p id="recipientGreeting" class="greeting"></p>
         <p id="message" class="message"></p>
         <p id="occasion" class="occasion" hidden></p>
         <section id="invitationDetails" class="invitation-details" hidden aria-label="Date details">
           <p id="venueRow" hidden><span>Meet at</span><strong id="venue"></strong></p>
-          <p id="dressCodeRow" hidden><span>Dress code</span><strong id="dressCode"></strong></p>
+          <p id="budgetRow" hidden><span>Budget</span><strong id="budget"></strong></p>
+          <p id="dressCodeRow" hidden><span>Mood / vibe</span><strong id="dressCode"></strong></p>
           <p id="extraDetailsRow" hidden><span>A little note</span><strong id="extraDetails"></strong></p>
         </section>
-        <form id="responseForm">
+        <section id="decisionPane" class="decision-pane" hidden aria-label="Date request response">
+          <p>Choose how you’d like to respond.</p>
+          <button id="continueToChoices" type="button">Choose a date and activity</button>
+          <button id="decline" class="button-secondary" type="button">I can’t make it this time</button>
+        </section>
+        </section>
+        <form id="responseForm" class="flow-page" hidden>
+          <h2 class="page-title">Your date preferences</h2>
+          <p class="page-intro">Choose the date and activity that suit you best.</p>
+          <button id="backToRequest" class="button-secondary back-button" type="button">Back to request</button>
           <fieldset>
             <legend>Which day works for you?</legend>
             <div id="dateOptions" class="choices"></div>
+            <button id="suggestDateTime" class="button-secondary suggest-time" type="button" hidden>Suggest a different date and time</button>
+            <label id="customDateTimeRow" class="custom-time-label" for="customDateTime" hidden>
+              Choose a date and time
+              <input id="customDateTime" type="datetime-local">
+            </label>
           </fieldset>
           <fieldset>
             <legend>What would you like to do?</legend>
