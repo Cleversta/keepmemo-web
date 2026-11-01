@@ -142,7 +142,15 @@
     event.preventDefault();
     if (!invite) return;
     const answers = new FormData(form);
-    sendReply('accepted', answers.get('date'), answers.get('activity'));
+    const activity = answers.get('activity');
+    const note = document.getElementById('note').value.trim();
+    if (activity && activity.startsWith('Suggest something else') && !note) {
+      status.className = 'status error';
+      status.textContent = 'Add your idea in the note before sending.';
+      document.getElementById('note').focus();
+      return;
+    }
+    sendReply('accepted', answers.get('date'), activity);
   });
 
   loadInvite();
