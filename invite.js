@@ -8,6 +8,11 @@
   const decisionPane = document.getElementById('decisionPane');
   const continueToChoices = document.getElementById('continueToChoices');
   const decline = document.getElementById('decline');
+  const requestPage = document.getElementById('requestPage');
+  const flowProgress = document.getElementById('flowProgress');
+  const stepRequest = document.getElementById('stepRequest');
+  const stepPreferences = document.getElementById('stepPreferences');
+  const backToRequest = document.getElementById('backToRequest');
   let invite = null;
 
   function showError(message) {
@@ -15,6 +20,13 @@
     status.textContent = message;
     status.className = 'status error';
   }
+  function showFlowStep(step) {
+    stepRequest.classList.toggle('active', step === 1);
+    stepRequest.classList.toggle('complete', step > 1);
+    stepPreferences.classList.toggle('active', step === 2);
+    stepPreferences.classList.toggle('complete', step > 2);
+  }
+
   function rpc(name, body) {
     return fetch(config.supabaseUrl + '/rest/v1/rpc/' + name, {
       method: 'POST',
@@ -91,7 +103,10 @@
       addChoices('dateOptions', 'date', invite.date_options || []);
       addChoices('activityOptions', 'activity', invite.activity_options || []);
       document.getElementById('invitationContent').hidden = false;
+      flowProgress.hidden = false;
+      requestPage.hidden = false;
       decisionPane.hidden = false;
+      showFlowStep(1);
     } catch (_) {
       showError('We could not load this invitation. Please try again when you have a connection.');
     }
@@ -115,7 +130,8 @@
           : ''
       });
       form.hidden = true;
-      decisionPane.hidden = true;
+      requestPage.hidden = true;
+      showFlowStep(3);
       status.textContent = result && result.already_responded
         ? 'This request has already been answered. Thank you!'
         : response === 'declined'
@@ -130,10 +146,20 @@
   }
 
   continueToChoices.addEventListener('click', () => {
-    decisionPane.hidden = true;
+    requestPage.hidden = true;
     form.hidden = false;
+    showFlowStep(2);
     form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     form.querySelector('input')?.focus({ preventScroll: true });
+  });
+
+  backToRequest.addEventListener('click', () => {
+    form.hidden = true;
+    requestPage.hidden = false;
+    status.textContent = '';
+    status.className = 'status';
+    showFlowStep(1);
+    requestPage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   });
 
   decline.addEventListener('click', () => sendReply('declined'));
