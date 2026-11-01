@@ -1,6 +1,28 @@
 (() => {
   const config = window.KEEP_MEMO_INVITE_CONFIG || {};
-  const token = new URLSearchParams(location.search).get('token');
+  function readToken() {
+    const params = new URLSearchParams(location.search);
+    const fullToken = params.get('token');
+    if (fullToken) return fullToken;
+    const compact = params.get('t');
+    if (!compact) return null;
+    if (/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(compact)) {
+      return compact;
+    }
+    if (!/^[A-Za-z0-9_-]{22}$/.test(compact)) return null;
+    try {
+      const base64 = compact.replace(/-/g, '+').replace(/_/g, '/') +
+        '='.repeat((4 - compact.length % 4) % 4);
+      const hex = Array.from(atob(base64), char =>
+        char.charCodeAt(0).toString(16).padStart(2, '0')
+      ).join('');
+      return hex.slice(0, 8) + '-' + hex.slice(8, 12) + '-' +
+        hex.slice(12, 16) + '-' + hex.slice(16, 20) + '-' + hex.slice(20);
+    } catch (_) {
+      return null;
+    }
+  }
+  const token = readToken();
   const loading = document.getElementById('loading');
   const status = document.getElementById('status');
   const form = document.getElementById('responseForm');
