@@ -6,9 +6,9 @@
   <meta name="theme-color" content="#f8f3ec">
   <meta name="robots" content="noindex, nofollow">
   <title>A little invitation | KeepMemo</title>
-  <link rel="stylesheet" href="invite.css?v=rich5">
+  <link rel="stylesheet" href="invite.css?v=rich6">
   <script src="invite-config.js?v=20261101"></script>
-  <script src="invite.js?v=rich5" defer></script>
+  <script src="invite.js?v=rich6" defer></script>
 </head>
 <body>
   <svg class="garden-art" viewBox="0 0 1600 1100" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -87,6 +87,11 @@
           <fieldset>
             <legend>Which day works for you?</legend>
             <div id="dateOptions" class="choices"></div>
+            <button id="suggestDateTime" class="button-secondary suggest-time" type="button" hidden>Suggest a different date and time</button>
+            <label id="customDateTimeRow" class="custom-time-label" for="customDateTime" hidden>
+              Choose a date and time
+              <input id="customDateTime" type="datetime-local">
+            </label>
           </fieldset>
           <fieldset>
             <legend>What would you like to do?</legend>
