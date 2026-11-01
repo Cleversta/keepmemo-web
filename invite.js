@@ -13,6 +13,10 @@
   const stepRequest = document.getElementById('stepRequest');
   const stepPreferences = document.getElementById('stepPreferences');
   const backToRequest = document.getElementById('backToRequest');
+  const dateOptions = document.getElementById('dateOptions');
+  const suggestDateTime = document.getElementById('suggestDateTime');
+  const customDateTimeRow = document.getElementById('customDateTimeRow');
+  const customDateTime = document.getElementById('customDateTime');
   let invite = null;
 
   function showError(message) {
@@ -59,6 +63,38 @@
     });
   }
 
+  function showCustomDateTime(show) {
+    customDateTimeRow.hidden = !show;
+    dateOptions.hidden = show;
+    customDateTime.required = show;
+    const dateInputs = Array.from(form.querySelectorAll('input[name="date"]'));
+    dateInputs.forEach((input, index) => {
+      input.required = !show && index === 0;
+      if (show) input.checked = false;
+    });
+    suggestDateTime.textContent = show
+      ? 'Choose one of their suggested dates instead'
+      : 'Suggest a different date and time';
+  }
+
+  function localDateTimeValue(date) {
+    const local = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
+    return local.toISOString().slice(0, 16);
+  }
+
+  function describeLocalDateTime(value) {
+    const date = new Date(value);
+    return new Intl.DateTimeFormat(undefined, {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+      timeZoneName: 'short'
+    }).format(date);
+  }
+
   async function loadInvite() {
     if (!token || !config.supabaseUrl || config.supabaseUrl.startsWith('SET_') ||
         !config.anonKey || config.anonKey.startsWith('SET_')) {
@@ -100,8 +136,21 @@
         hasDetails = true;
       });
       document.getElementById('invitationDetails').hidden = !hasDetails;
-      addChoices('dateOptions', 'date', invite.date_options || []);
+      const offeredDates = invite.date_options || [];
+      const canSuggestDate = invite.recipient_picks_date_time === true;
+      addChoices('dateOptions', 'date', offeredDates);
       addChoices('activityOptions', 'activity', invite.activity_options || []);
+      if (offeredDates.length > 0 && canSuggestDate) {
+        suggestDateTime.hidden = false;
+        customDateTime.min = localDateTimeValue(new Date());
+      } else if (offeredDates.length === 0 && canSuggestDate) {
+        customDateTime.min = localDateTimeValue(new Date());
+        showCustomDateTime(true);
+        suggestDateTime.hidden = true;
+      } else if (offeredDates.length === 0) {
+        showError('The sender has not added any date options yet. Please ask them to update the request.');
+        return;
+      }
       document.getElementById('invitationContent').hidden = false;
       flowProgress.hidden = false;
       requestPage.hidden = false;
@@ -153,6 +202,10 @@
     form.querySelector('input')?.focus({ preventScroll: true });
   });
 
+  suggestDateTime.addEventListener('click', () => {
+    showCustomDateTime(customDateTimeRow.hidden);
+  });
+
   backToRequest.addEventListener('click', () => {
     form.hidden = true;
     requestPage.hidden = false;
@@ -171,13 +224,17 @@
     const answers = new FormData(form);
     const activity = answers.get('activity');
     const note = document.getElementById('note').value.trim();
+    if (!customDateTimeRow.hidden && !customDateTime.reportValidity()) return;
+    const chosenDate = customDateTimeRow.hidden
+      ? answers.get('date')
+      : describeLocalDateTime(customDateTime.value);
     if (activity && activity.startsWith('Suggest something else') && !note) {
       status.className = 'status error';
       status.textContent = 'Add your idea in the note before sending.';
       document.getElementById('note').focus();
       return;
     }
-    sendReply('accepted', answers.get('date'), activity);
+    sendReply('accepted', chosenDate, activity);
   });
 
   loadInvite();
