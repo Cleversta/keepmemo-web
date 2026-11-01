@@ -5,6 +5,9 @@
   const status = document.getElementById('status');
   const form = document.getElementById('responseForm');
   const submit = document.getElementById('submit');
+  const decisionPane = document.getElementById('decisionPane');
+  const continueToChoices = document.getElementById('continueToChoices');
+  const decline = document.getElementById('decline');
   let invite = null;
 
   function showError(message) {
@@ -63,7 +66,7 @@
       }
       document.body.dataset.theme = invite.theme || 'garden';
       document.getElementById('recipientGreeting').textContent =
-        invite.recipient_name ? 'For ' + invite.recipient_name : 'Someone has a question for you';
+        invite.recipient_name ? 'A date request for ' + invite.recipient_name : 'A date request for you';
       document.getElementById('message').textContent = invite.message;
 
       const occasion = document.getElementById('occasion');
@@ -87,33 +90,58 @@
       addChoices('dateOptions', 'date', invite.date_options || []);
       addChoices('activityOptions', 'activity', invite.activity_options || []);
       document.getElementById('invitationContent').hidden = false;
+      decisionPane.hidden = false;
     } catch (_) {
       showError('We could not load this invitation. Please try again when you have a connection.');
     }
   }
 
-  form.addEventListener('submit', async event => {
-    event.preventDefault();
-    if (!invite) return;
+  async function sendReply(response, chosenDate = null, chosenActivity = null) {
     submit.disabled = true;
+    decline.disabled = true;
     status.className = 'status';
-    status.textContent = 'Sending your answer…';
+    status.textContent = response === 'declined'
+      ? 'Sending your reply…'
+      : 'Sending your date preferences…';
     try {
-      const result = await rpc('keepmemo_submit_date_invitation', {
+      const result = await rpc('keepmemo_reply_date_invitation', {
         p_public_token: token,
-        p_chosen_date: new FormData(form).get('date'),
-        p_chosen_activity: new FormData(form).get('activity'),
-        p_recipient_note: document.getElementById('note').value.trim()
+        p_response: response,
+        p_chosen_date: chosenDate,
+        p_chosen_activity: chosenActivity,
+        p_recipient_note: response === 'accepted'
+          ? document.getElementById('note').value.trim()
+          : ''
       });
       form.hidden = true;
+      decisionPane.hidden = true;
       status.textContent = result && result.already_responded
-        ? 'This invitation has already been answered. Thank you!'
-        : 'Your answer was sent. They’ll see your choices in KeepMemo 💌';
+        ? 'This request has already been answered. Thank you!'
+        : response === 'declined'
+          ? 'Thanks for letting them know.'
+          : 'Your date preferences were sent. They’ll see your choices in KeepMemo 💌';
     } catch (_) {
       status.className = 'status error';
-      status.textContent = 'Your answer did not send. Check your connection and try again.';
+      status.textContent = 'Your reply did not send. Check your connection and try again.';
       submit.disabled = false;
+      decline.disabled = false;
     }
+  }
+
+  continueToChoices.addEventListener('click', () => {
+    decisionPane.hidden = true;
+    form.hidden = false;
+    form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    form.querySelector('input')?.focus({ preventScroll: true });
+  });
+
+  decline.addEventListener('click', () => sendReply('declined'));
+
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!invite) return;
+    const answers = new FormData(form);
+    sendReply('accepted', answers.get('date'), answers.get('activity'));
   });
 
   loadInvite();
