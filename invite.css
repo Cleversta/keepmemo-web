@@ -10,6 +10,32 @@
   --sage: #8e9a82;
   --border: #e8dfd3;
 }
+body[data-theme="sunset"] {
+  --accent: #c66f54;
+  --accent-deep: #a95543;
+  --accent-soft: #fff0e8;
+  --sage: #a1776b;
+  --border: #edc7b8;
+  background:
+    radial-gradient(ellipse at 12% 8%, #fff5e8 0, transparent 38rem),
+    radial-gradient(ellipse at 88% 86%, #f3e4dc 0, transparent 35rem),
+    radial-gradient(ellipse at 84% 16%, #f8ded0 0, transparent 32rem),
+    #fff8f1;
+}
+body[data-theme="moonlight"] {
+  --accent: #777a9b;
+  --accent-deep: #5f6282;
+  --accent-soft: #eeeef8;
+  --sage: #858aa9;
+  --border: #d8d9e7;
+  background:
+    radial-gradient(ellipse at 12% 8%, #fbfaff 0, transparent 38rem),
+    radial-gradient(ellipse at 88% 86%, #e9eaf5 0, transparent 35rem),
+    radial-gradient(ellipse at 84% 16%, #e9e7f4 0, transparent 32rem),
+    #f8f8fd;
+}
+body[data-theme="sunset"] .mark-petals { fill: #e8ad8e; stroke: #c66f54; }
+body[data-theme="moonlight"] .mark-petals { fill: #c5c8e0; stroke: #777a9b; }
 * { box-sizing: border-box; }
 html { min-height: 100%; background: var(--paper); }
 body {
@@ -72,7 +98,12 @@ body {
 h1 { margin: 0 auto 18px; max-width: 430px; font-size: clamp(32px, 7vw, 46px); font-weight: 500; line-height: 1.12; text-wrap: balance; }
 .greeting, .message { color: var(--muted); line-height: 1.75; }
 .greeting { margin: 18px 0 4px; }
-.message { margin: 0 auto 30px; white-space: pre-wrap; }
+.message { margin: 0 auto 16px; white-space: pre-wrap; }
+.occasion { margin: 0 auto 14px; color: var(--accent); font: 700 11px/1.4 system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; }
+.invitation-details { display: grid; gap: 8px; margin: 0 auto 24px; padding: 14px 16px; border: 1px solid var(--border); border-radius: 16px; background: var(--accent-soft); text-align: left; }
+.invitation-details p { display: grid; gap: 3px; margin: 0; font: 13px/1.45 system-ui, sans-serif; }
+.invitation-details p span { color: var(--muted); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+.invitation-details p strong { color: var(--ink); font-weight: 600; }
 .muted, .status { color: var(--muted); font: 15px/1.6 system-ui, sans-serif; }
 fieldset { min-width: 0; margin: 0 0 22px; padding: 0; border: 0; text-align: left; }
 legend, .note-label { display: block; margin-bottom: 10px; font: 650 14px/1.4 system-ui, sans-serif; }
