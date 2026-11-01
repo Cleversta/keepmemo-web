@@ -60,6 +60,11 @@
       <h1 id="title">A little date request</h1>
       <p id="loading" class="muted" role="status">Opening your invitation…</p>
       <section id="invitationContent" hidden>
+        <nav id="flowProgress" class="flow-progress" aria-label="Request steps" hidden>
+          <span id="stepRequest" class="flow-step active"><b>1</b> The request</span>
+          <span id="stepPreferences" class="flow-step"><b>2</b> Your preferences</span>
+        </nav>
+        <section id="requestPage" class="flow-page">
         <p id="recipientGreeting" class="greeting"></p>
         <p id="message" class="message"></p>
         <p id="occasion" class="occasion" hidden></p>
@@ -74,7 +79,11 @@
           <button id="continueToChoices" type="button">Choose a date and activity</button>
           <button id="decline" class="button-secondary" type="button">I can’t make it this time</button>
         </section>
-        <form id="responseForm" hidden>
+        </section>
+        <form id="responseForm" class="flow-page" hidden>
+          <h2 class="page-title">Your date preferences</h2>
+          <p class="page-intro">Choose the date and activity that suit you best.</p>
+          <button id="backToRequest" class="button-secondary back-button" type="button">Back to request</button>
           <fieldset>
             <legend>Which day works for you?</legend>
             <div id="dateOptions" class="choices"></div>
