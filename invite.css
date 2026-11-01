@@ -104,6 +104,15 @@ h1 { margin: 0 auto 18px; max-width: 430px; font-size: clamp(32px, 7vw, 46px); f
 .invitation-details p { display: grid; gap: 3px; margin: 0; font: 13px/1.45 system-ui, sans-serif; }
 .invitation-details p span { color: var(--muted); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
 .invitation-details p strong { color: var(--ink); font-weight: 600; }
+.decision-pane { display: grid; gap: 10px; margin: 20px 0 8px; }
+.decision-pane p { margin: 0 0 3px; color: var(--muted); font: 14px/1.5 system-ui, sans-serif; }
+.button-secondary {
+  border: 1px solid var(--border);
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  box-shadow: none;
+}
+.button-secondary:hover { box-shadow: 0 5px 12px rgb(70 53 38 / 7%); }
 .muted, .status { color: var(--muted); font: 15px/1.6 system-ui, sans-serif; }
 fieldset { min-width: 0; margin: 0 0 22px; padding: 0; border: 0; text-align: left; }
 legend, .note-label { display: block; margin-bottom: 10px; font: 650 14px/1.4 system-ui, sans-serif; }
