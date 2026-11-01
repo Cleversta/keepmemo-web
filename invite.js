@@ -61,9 +61,29 @@
         status.textContent = 'This invitation has already been answered. Thank you!';
         return;
       }
+      document.body.dataset.theme = invite.theme || 'garden';
       document.getElementById('recipientGreeting').textContent =
         invite.recipient_name ? 'For ' + invite.recipient_name : 'Someone has a question for you';
       document.getElementById('message').textContent = invite.message;
+
+      const occasion = document.getElementById('occasion');
+      if (invite.occasion) {
+        occasion.textContent = invite.occasion;
+        occasion.hidden = false;
+      }
+      const detailRows = [
+        ['venue', 'venueRow', invite.venue],
+        ['dressCode', 'dressCodeRow', invite.dress_code],
+        ['extraDetails', 'extraDetailsRow', invite.extra_details]
+      ];
+      let hasDetails = false;
+      detailRows.forEach(([valueId, rowId, value]) => {
+        if (!value) return;
+        document.getElementById(valueId).textContent = value;
+        document.getElementById(rowId).hidden = false;
+        hasDetails = true;
+      });
+      document.getElementById('invitationDetails').hidden = !hasDetails;
       addChoices('dateOptions', 'date', invite.date_options || []);
       addChoices('activityOptions', 'activity', invite.activity_options || []);
       document.getElementById('invitationContent').hidden = false;
