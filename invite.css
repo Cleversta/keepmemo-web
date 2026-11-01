@@ -104,6 +104,37 @@ h1 { margin: 0 auto 18px; max-width: 430px; font-size: clamp(32px, 7vw, 46px); f
 .invitation-details p { display: grid; gap: 3px; margin: 0; font: 13px/1.45 system-ui, sans-serif; }
 .invitation-details p span { color: var(--muted); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
 .invitation-details p strong { color: var(--ink); font-weight: 600; }
+.flow-progress { display: flex; gap: 9px; margin: 2px 0 22px; }
+.flow-step {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 11px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  color: var(--muted);
+  background: rgb(255 255 255 / 65%);
+  font: 650 12px/1.2 system-ui, sans-serif;
+}
+.flow-step b {
+  display: grid;
+  width: 23px;
+  height: 23px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  font-size: 11px;
+}
+.flow-step.active { border-color: var(--sage); background: #f0f3ed; color: var(--ink); }
+.flow-step.active b, .flow-step.complete b { background: var(--sage); color: white; }
+.page-title { margin: 0 0 5px; font-size: clamp(23px, 5vw, 29px); font-weight: 500; }
+.page-intro { margin: 0 0 18px; color: var(--muted); font: 14px/1.55 system-ui, sans-serif; }
+.back-button { margin: 0 0 18px; }
+.flow-page { animation: page-enter .24s ease both; }
+@keyframes page-enter { from { opacity: .55; transform: translateY(7px); } to { opacity: 1; transform: none; } }
 .decision-pane { display: grid; gap: 10px; margin: 20px 0 8px; }
 .decision-pane p { margin: 0 0 3px; color: var(--muted); font: 14px/1.5 system-ui, sans-serif; }
 .button-secondary {
