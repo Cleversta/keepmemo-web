@@ -156,6 +156,7 @@
   backToRequest.addEventListener('click', () => {
     form.hidden = true;
     requestPage.hidden = false;
+    decisionPane.hidden = false;
     status.textContent = '';
     status.className = 'status';
     showFlowStep(1);
