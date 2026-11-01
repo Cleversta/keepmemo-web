@@ -76,6 +76,7 @@
       }
       const detailRows = [
         ['venue', 'venueRow', invite.venue],
+        ['budget', 'budgetRow', invite.budget],
         ['dressCode', 'dressCodeRow', invite.dress_code],
         ['extraDetails', 'extraDetailsRow', invite.extra_details]
       ];
